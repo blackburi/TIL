@@ -9,7 +9,7 @@
 3. Repository 
     * 버전이 저장되는 공간
 
-![git_basic](./asset/git_basic.png)
+![git_basic](./image/git_basic.png)
 
 ## git 기본 명령어 정리 
 
