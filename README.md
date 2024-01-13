@@ -3,3 +3,4 @@
 * [Local & Remote Repository](./240112.md)
 
 # Python
+* [basic python](./basic_python)
