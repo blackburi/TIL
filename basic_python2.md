@@ -144,8 +144,37 @@ else:
     ```
 
 ## `for-else`문
-
+* `for-else`문은 `for`가 전부 돌아가면 `else`가 돌아가는 형태이다.
+    ```python
+    for x in [1, 2, 3, 4]:
+        print(x)
+    else:
+        print("리스트의 원소를 모두 출력했어요")
+    # [1, 2, 3, 4, '리스트의원소를 모두 출력했어요']가 한줄에 하나씩 출력된다.
+    ```
+* `for`반복문 안에 `if`문을 이용하여 `break`를 사용하면 조금 다른 형태로 출력이 가능하다.
+    ```python
+    for x in [1, 2, 3, 4]:
+        if x % 3:   # x가 3의 배수가 아니면 출력
+            print(x)
+        else:   # x가 3의 배수라면 break
+            break
+    else:
+        print("리스트의 원소를 모두 출력했어요")
+    # 1 2 이후 break가 걸려 더이상 출력되지 않는다.
+    ```
+    ```python
+    for x in [1, 2, 3, 4]:
+        if x % 3:   # x가 3의 배수가 아니면 출력
+            print(x)
+        else:   # x가 3의 배수라면 break
+            pass
+    else:
+        print("리스트의 원소를 모두 출력했어요")
+    # [1, 2, 4, '리스트의 원소를 모두 출력했어요']가 차례대로 출력된다.
+    ```
 [공부해야하는 링크](https://wikidocs.net/190098)
 
 
 ## `while-else`문
+
