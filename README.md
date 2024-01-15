@@ -8,10 +8,10 @@
 * [ch03 - 함수](./basic_python/basic_python3.md)
 
 # Python - 공부하기
-* [week 1-1](./python_study/)
-* [week 1-2](./python_study/)
-* [week 1-3](./python_study/)
-* [week 1-4](./python_study/)
+* [week 1-1](./python_class/week1-1.md)
+* [week 1-2](./python_class/week1-2.md)
+* [week 1-3](./python_class/week1-3.md)
+* [week 1-4](./python_class/week1-4.md)
 
 # Python - HW & Practice
 * [week 1-1](./HW&practice/week1-1)
