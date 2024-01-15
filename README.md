@@ -14,7 +14,6 @@
 * [week 1-4](./python_class/week1-4.md)
 
 # Python - HW & Practice
-* [week 1-1](./HW&practice/week1-1)
 * [week 1-2](./HW&practice/week1-2)
 * [week 1-3](./HW&practice/week1-3)
 * [week 1-4](./HW&practice/week1-4)
