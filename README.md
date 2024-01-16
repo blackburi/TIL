@@ -13,11 +13,6 @@
 * [week 1-3](./python_class/week1-3.md)
 * [week 1-4](./python_class/week1-4.md)
 
-# Python - HW & Practice
-* [week 1-2](./HW&practice/week1-2)
-* [week 1-3](./HW&practice/week1-3)
-* [week 1-4](./HW&practice/week1-4)
-
 # Python 예제
 * [SWEA 2072 홀수만 더하기](./SWEA/SWEA_2072.py)
 * [SWEA 2068 최대수 구하기](./SWEA/SWEA_2068.py)
@@ -44,8 +39,10 @@
 * [별찍기 16](./baekjoon/star16.py)
 * [별찍기 17](./baekjoon/star17.py)
 * [별찍기 18](./baekjoon/star18.py)
-* [별찍기 19](./baekjoon/star19.py)
+* [별찍기 19 - if](./baekjoon/star19_if.py)
+* [별찍기 19 - 재귀함수](./baekjoon/star19_re.py)
 * [별찍기 20](./baekjoon/star20.py)
 * [별찍기 21](./baekjoon/star21.py)
 * [별찍기 22](./baekjoon/star22.py)
-* [별찍기 23](./baekjoon/star23.py)
+* [별찍기 23 - if](./baekjoon/star23_my.py)
+* [별찍기 23 - for](./baekjoon/star23_other.py)
