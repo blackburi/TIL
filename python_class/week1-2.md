@@ -258,6 +258,7 @@
     ```
 * 단축 평가
     * 논리 연산에서 두 번째 피연산자를 평가하지 않고 결과를 결정하는 동작
+    * 판별하기 위해 가장 마지막에 보는(마지막으로 봐야 하는) 요소가 전체를 결정한다.
        ```python
         print(A) # False
         print(B) # True
@@ -268,17 +269,26 @@
         ```python
         vowels = 'aeiou'
         print(('a' and 'b') in vowels)
-        print(('a' and 'b') in vowels)
+        # 문자열은 언제나 True이기 때문에 and의 경우 뒤의 값을 봐야한다.
+        # print('b' in vowels) 가 되어 False가 된다.
+        print(('b' and 'a') in vowels)
+        # print('a' in vowels) 가 되어 True가 된다.
 
-        print(3 and 5)
-        print(3 and 0)
-        print(0 and 3)
-        print(0 and 0)
+        print(3 and 5) # 5
+        # 3과 5 모두 True이기 때문에 5가 출력된다.
+        print(3 and 0) # 0
+        # 0은 암묵적 변환에 의해 False이기 때문에 
+        print(0 and 3) # 0
+        # 0값이 False이기 때문에 바로 0을 출력
+        print(0 and 0) # 0
 
-        print(5 or 3)
-        print(3 or 0)
-        print(0 or 3)
-        print(0 or 0)
+        print(5 or 3) # 5
+        # 5가 True 값이기 때문에 5를 출력
+        print(3 or 0) # 3
+        print(0 or 3) # 3
+        # 0이 False이기 때문에 뒤에 3 True까지 보고 3을 출력
+        print(0 or 0) # 0
+        # 둘다 False이기 때문에 0 출력
         ```
     * 단축 평가 동작
         * and
