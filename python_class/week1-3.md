@@ -72,9 +72,9 @@
     * 단, 호출 시 keyword argument는 positional argument 뒤에 위치해야 한다.
         ```python
         def greet(name, age) :
-            print(f'안녕핫요, {name}님! {age}살이시군요.')
+            print(f'안녕하세요, {name}님! {age}살이시군요.')
 
-        greet(name= 'Dave', age = 35) # 안녕하세요, Dave님! 35살이시군요.
+        greet(name = 'Dave', age = 35) # 안녕하세요, Dave님! 35살이시군요.
 
         greet('Dave', age = 35) # 안녕하세요, Dave님! 35살이시군요.
         greet(age=35, 'Dave') # positional argument folows keyword argument
