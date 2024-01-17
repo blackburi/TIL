@@ -168,7 +168,7 @@
 * 여러 개의 항목 또는 요소를 담는 자료 구조
     * str, list, tuple, set, dict
     * collection 정리
-        ![collection](../image/p.54)
+        ![collection](../image/collection.png)
 
 
 # Type conversion
@@ -207,16 +207,22 @@
         ```
 * collection 간 형변환 정리
     * 전부 외우거나 할 필요는 없지만 error가 뜨면 그때 바꿔주면 된다.
-    ![collection 간 형변환 정리](../image/.65)
+    ![collection 간 형변환 정리](../image/collection2.png)
 
 # 연산자
 
 ## 산술 연산자
-![연산자](../image/p.69)
+* `-` : 음수 부호 or 뺄셈
+* `+` : 덧셈
+* `*` : 곱셈
+* `/` : 나눗셈
+* `//` : 정수 나눗셈(몫)
+* `%` : 나머지
+* `**` : 지수(거듭제곱)
 
 ## 복합 연산자
 * 연산과 할당이 함께 이루어짐
-![복합 연산자](../image/p.71)
+![복합 연산자](../image/complex_calculate.png)
 
 
 ## 비교 연산자
@@ -254,7 +260,14 @@
     ```
 * 비교 연산자와 함께 사용 가능
     ```python
-    
+    num = 15
+    result = (num > 10) and (num % 2 == 0)
+    print(result) # False
+
+    name = 'Alice'
+    age = 25
+    result = (name == 'Alice') or (age == 30)
+    print(result) # True
     ```
 * 단축 평가
     * 논리 연산에서 두 번째 피연산자를 평가하지 않고 결과를 결정하는 동작
@@ -292,14 +305,28 @@
         ```
     * 단축 평가 동작
         * and
+            * 첫 번째 피연산자가 False인 경우, 전체 표현식은 False로 결정. 두 번째 피연산자는 평가되지 않고 그 값이 무시
+            * 첫 번째 피연산자가 True인 경우, 전체 표현식의 결과는 두 번째 피연산자에 의해 결정. 두 번째 피연산자가 평가되고 그 결과가 전체 표현식의 결과로 반환
         * or
+            * 첫 번째 피연산자가 True인 경우, 전체 표현식은 True로 결정. 두 번째 피연산자는 평가되지 않고 그 값이 무시
+            * 첫 번째 피연산자가 False인 경우, 전체 표현식의 결과는 두 번째 피연산자에 의해 결정. 두 번째 피연산자가 평가되고 그 결과가 전체 표현식의 결과로 반환.
     * 단축 평가 이유
         * code 실행을 최적화하고 , 불필요한 연산을 피할 수 있도록 함
 
 ## 멤버십 연산자
 * 특정 값이 sequence나 다른 collection에 속하는지 여부를 확인
-    * `in` : 
-    * `not in` :
+    * `in` : 왼쪽 피연산자가 오른쪽 피연산자의 sequence에 속하는지를 확인
+    * `not in` : 왼쪽 피연산자가 오른쪽 피연산자의 sequence에 속하지 않는지를 확인
+        ```python
+        word = 'hello'
+        numbers = [1, 2, 3, 4, 5]
+
+        print('h' in word) # True
+        print('z' in word) # False
+
+        print(4 not in numbers) # False
+        print(6 not in numbers) # True
+        ```
 
 ## sequence형 연산자
 * `+`와 `*`는 sequence간 연산에서 산술 연산자일때와 다른 역할을 가진다.

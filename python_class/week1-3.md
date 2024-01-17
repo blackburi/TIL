@@ -12,7 +12,8 @@
     * `function_name(arguments)` 형태로 사용. ex) `print()`
 
 ## 함수 구조
-* ![함수 구조](../image/p.13)
+* 기본적인 함수 구조
+![함수 구조](../image/instruction_of_function.png)
 * parameter : 매개 변수
 * return value : 반환 값
 * 함수의 정의와 호출
@@ -148,25 +149,26 @@
         3. Global scope
         4. Built-in scope
         * 함수 내에서는 바깥 scope의 변수에 접근 가능하나 수정은 할 수 없음
-        * ![이름 검색 규칙](../image/p.34)
-```python
-a = 1
-b = 2
+        * LEGB rule (이름 검색 규칙)
+        ![이름 검색 규칙](../image/LEGB_rule.png)
+            ```python
+            a = 1
+            b = 2
 
-def enclosed() :
-    a = 10
-    c = 3
+            def enclosed() :
+                a = 10
+                c = 3
 
-    def local(c) :
-        print(a, b, c) # 10, 2, 500
-    
-    local(500)
-    print(a, b, c) # 10, 2, 3
+                def local(c) :
+                    print(a, b, c) # 10, 2, 500
+                
+                local(500)
+                print(a, b, c) # 10, 2, 3
 
-enclosed()
-print(a, b) # 1, 2
-# code를 출력하면 3개가 전부 출력된다.
-```
+            enclosed()
+            print(a, b) # 1, 2
+            # code를 출력하면 3개가 전부 출력된다.
+            ```
 * `global` keyword
     * 변수의 scope를 전역 범위로 지정하기 위해서 사용
     * 일반적으로 함수 내에서 전역 변수를 수정하려는 경우에 사용
