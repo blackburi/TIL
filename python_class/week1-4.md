@@ -294,6 +294,7 @@
     ```python
     my_dict = {'x' : 10, 'y' : 20, 'z', 30}
 
+    # 반복문에서는 key값만 반복된다
     for key in my_dict :
         print(key)
         print(my_dict[key])
