@@ -8,16 +8,16 @@
 * [ch03 - 함수](./basic_python/basic_python3.md)
 
 # Python - 공부하기
-* [week 1-1](./python_class/week1-1.md)
-* [week 1-2](./python_class/week1-2.md)
-* [week 1-3](./python_class/week1-3.md)
-* [week 1-4](./python_class/week1-4.md)
+* [1-1](./python_class/1-1.md)
+* [1-2](./python_class/1-2.md)
+* [1-3](./python_class/1-3.md)
+* [1-4](./python_class/1-4.md)
 
 # Python - practice
-* [week 1-1](./practice/1-1/)
-* [week 1-2](./practice/1-2/)
-* [week 1-3](./practice/1-3/)
-* [week 1-4](./practice/1-4/)
+* [1-1](./practice/1-1/)
+* [1-2](./practice/1-2/)
+* [1-3](./practice/1-3/)
+* [1-4](./practice/1-4/)
 
 # Python 예제
 * [SWEA 2072 홀수만 더하기](./SWEA/SWEA_2072.py)
