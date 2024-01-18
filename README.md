@@ -13,6 +13,12 @@
 * [week 1-3](./python_class/week1-3.md)
 * [week 1-4](./python_class/week1-4.md)
 
+# Python - practice
+* [week 1-1](./practice/1-1/)
+* [week 1-2](./practice/1-2/)
+* [week 1-3](./practice/1-3/)
+* [week 1-4](./practice/1-4/)
+
 # Python 예제
 * [SWEA 2072 홀수만 더하기](./SWEA/SWEA_2072.py)
 * [SWEA 2068 최대수 구하기](./SWEA/SWEA_2068.py)
