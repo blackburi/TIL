@@ -1,6 +1,6 @@
 # system
-* [Markdown & CLI & Git](./startup/240111.md)
-* [Local & Remote Repository](./startup/240112.md)
+* [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
+* [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
 # Python -basic
 * [ch01 - 사칙연산, 변수,list](./basic_python/basic_python1.md)
