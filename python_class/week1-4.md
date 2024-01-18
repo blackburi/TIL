@@ -47,6 +47,7 @@
     # module_name.function_name
     print(math.squt(4)) # 2.0
     ```
+    * python은 명시적인 것을 중요시 하기 때문에 `from`절을 사용하기보다 module_name을 써주는 것을 더 권장한다.
 * module을 import하는 다른 방법
     * `from`절을 활용해 특정 module을 미리 참조하고 어떤 요소를 `import`할지 명시
         ```python
