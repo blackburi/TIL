@@ -12,6 +12,7 @@
 * [1-2](./python_class/1-2.md)
 * [1-3](./python_class/1-3.md)
 * [1-4](./python_class/1-4.md)
+* [2-1](./python_class/2-1.md)
 
 # Python - practice
 * [1-1](./practice/1-1/)
