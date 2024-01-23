@@ -26,14 +26,14 @@ for i in range(T) :
     Day = int(input())
     stock = list(map(int, input().split()))
     stock.reverse()
-    max = stock[0]
+    Max = stock[0]
     total = 0
 
     for i in range(1, Day) :
-        if max < stock[i]:
-            max = stock[i]
+        if Max < stock[i]:
+            Max = stock[i]
             continue
         else :
-            total += max - stock[i]
+            total += Max - stock[i]
 
     print(total)
