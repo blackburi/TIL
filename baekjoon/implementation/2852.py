@@ -47,12 +47,12 @@ if score1 > score2 :
 elif score1 < score2 :
     time2 += 2880 - now
 
-h1 = time1 // 60
-m1 = time1 % 60
-h2 = time2 // 60
-m2 = time2 % 60
+m1 = time1 // 60
+s1 = time1 % 60
+m2 = time2 // 60
+s2 = time2 % 60
 
-ans = [h1, m1, h2, m2]
+ans = [m1, s1, m2, s2]
 for _ in range(4) :
     k = ans.pop(0)
     if k < 10 :
