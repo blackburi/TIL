@@ -1,19 +1,24 @@
-T = int(input())
+import sys
 
-def isprime(x) :
-    for i in range(3, int(x**0.5+2)) :
-        if x == 1 :
-            return False
-        else :
-            if x % i == 0 :
-                return False
-            return True
+prime = []
+check = [0] * 1000001
+check[0] = 1
+check[1] = 1
 
-for t in range(T) :
-    n = int(input())
-    cnt = 0
-    for j in range(3, int(n**0.5+2)) :
-        if isprime(j) is True :
-            if isprime(n-j) is True :
-                cnt += 1
-    print(cnt)
+for i in range(2, 1000001):
+    if check[i] == 0:
+        prime.append(i)
+        for j in range(2*i, 1000001, i):
+            check[j] = 1
+
+T = int(sys.stdin.readline())
+
+for _ in range(T):
+    count = 0
+    N = int(sys.stdin.readline())
+    for i in prime:
+        if i >= N:
+            break
+        if not check[N - i] and i <= N-i:  # 순서만 다른거 counting 하지 않기 위해
+            count += 1
+    print(count)
