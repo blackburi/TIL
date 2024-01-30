@@ -1,26 +1,27 @@
 while True :
-    S = list(map(str, input()))
+    a = input()
+    stack = []
 
-    if S == ['.'] :
+    if a == '.' :
         break
 
-    a = 0 # ] 의 개수 - [ 의 개수
-    b = 0 # ) 의 개수 - ( 의 개수
-
-    # 오른쪽부터 항상 a >= 0, b >= 0
-
-    for _ in range(len(S)) :
-        i = S.pop()
-
-        if i == ']' :
-            a += 1
-        elif i == '[' :
-            a -= 1
+    for i in a :
+        if i == '[' or i == '(' :
+            stack.append(i)
+        elif i == ']' :
+            if len(stack) != 0 and stack[-1] == '[' :
+                # i와 stack에 마지막에 들어간 괄호가 짝이 맞으면 같이 삭제
+                stack.pop()
+            else :
+                stack.append(']')
+                break
         elif i == ')' :
-            b += 1
-        elif i == '(' :
-            b -= 1
-        
-        if a < 0 and b < 0 :
-            print('no')
-            break
+            if len(stack) != 0 and stack[-1] == '(' :
+                stack.pop()
+            else :
+                stack.append(')')
+                break
+    if len(stack) == 0 :
+        print('yes')
+    else :
+        print('no')
