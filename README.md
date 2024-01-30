@@ -2,11 +2,6 @@
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
-# Python -basic
-* [ch01 - 사칙연산, 변수,list](./basic_python/basic_python1.md)
-* [ch02 - 제어문(while, if, for)](./basic_python/basic_python2.md)
-* [ch03 - 함수](./basic_python/basic_python3.md)
-
 # Python - 공부하기
 * [1-1](./python_class/1-1.md)
 * [1-2](./python_class/1-2.md)
