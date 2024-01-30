@@ -2,8 +2,8 @@
 
 N = int(input())
 
-score1 = 0 # 1team score
-score2 = 0 # 2team scre
+score1 = 0 # 1team get score
+score2 = 0 # 2team get score
 time1 = 0 # 1team whole winnig time
 time2 = 0 # 2team whole winning time
 goal = []
