@@ -20,26 +20,12 @@ stack = [] # stack 구조
 pm = []
 
 while N > 0 :
-    if end[len(end)-1] == N :
+    if end[-1] == N :
         end.pop()
-        pm.append('+')
-        pm.append('-')
+        end.pm('+')
+        end.pm('-')
         N -= 1
-    elif end[len(end)-1] != N and len(stack) == 0 :
-        a = end.pop()
-        stack.append(a)
-        pm.append('+')
-    elif end[len(end)-1] != N and stack[-1] == N :
-        stack.pop()
-        pm.append('-')
-        N -= 1
-    elif end[len(end)-1] != N and stack[-1] != N :
-        b = end.pop()
-        stack.append(b)
-        pm.append('+')
-    else :
-        print('NO')
-        break
+        
 
 if N == 0 :
     pm.reverse()
