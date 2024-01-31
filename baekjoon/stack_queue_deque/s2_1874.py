@@ -9,6 +9,7 @@
 # 나오는 +, - 수열을 reverse 후 +/-를 바꿔주면 된다.
 
 import sys
+from collections import deque
 input = sys.stdin.readline
 
 N = int(input()) # N부터 나와야 한다.
@@ -17,26 +18,51 @@ end = [int(input()) for _ in range(N)]
 
 stack = [] # stack 구조
 
-pm = []
+pm = deque([])
 
 while N > 0 :
-    if end[-1] == N :
-        end.pop()
-        end.pm('+')
-        end.pm('-')
-        N -= 1
-        
+    if len(end) != 0 and len(stack) != 0:
+        if end[-1] == N :
+            end.pop()
+            pm.append('+')
+            pm.append('-')
+            N -= 1
+        elif stack[-1] == N :
+            stack.pop()
+            pm.append('-')
+            N -= 1
+        else :
+            a = end.pop()
+            stack.append(a)
+            pm.append('+')
+    elif len(end) != 0 and len(stack) == 0:
+        if end[-1] == N :
+            end.pop()
+            pm.append('+')
+            pm.append('-')
+            N -= 1
+        else :
+            a = end.pop()
+            stack.append(a)
+            pm.append('+')
+    elif len(end) == 0 and len(stack) != 0:
+        if stack[-1] == N :
+            stack.pop()
+            pm.append('-')
+            N -= 1
+        else :
+            print('NO')
+            break
 
 if N == 0 :
     pm.reverse()
 
-    for i in pm :
-        if i == '+' :
-            pm.pop(0)
+    for _ in range(len(pm)) :
+        a = pm.popleft()
+        if a == '+' :
             pm.append('-')
         else :
-            pm.pop(0)
             pm.append('+')
-    
+        
     for j in pm :
         print(j)
