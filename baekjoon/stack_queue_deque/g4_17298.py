@@ -1,27 +1,21 @@
 import sys
-from collections import deque
 input = sys.stdin.readline
 
-A = int(input())
-sub = list(map(int, input().split()))
-sub.reverse()
-deq = deque(sub)
+n = int(input())
+nge= list(map(int, input().split()))
 
-stack = [] # put max numbers
-ans = [] # answer list
+# '-1'로 출력되는 자리를 신경쓰지 않기 위해서
+ans = [-1] * n
 
-deq.reverse
-print(deq)
+stack = []
+stack_index = []
 
-# if len(deq) == 1 :
-#     print(-1)
-# else :
-#     while len(deq) > 0 or len(stack) > 0 :
-#         if deq[0] < deq[1] :
-#             deq.pop()
-#             ans.append(deq[1])
-#         else : # deq[0] > deq[1]
-#             if len(stack) == 0 :
-#                 k = deq.popleft()
-#                 stack.append(k)
-#             else : # len(deq) > 0
+for i in range(n) :
+    while len(stack) > 0 and stack[-1] < nge[i] :
+        a = stack.pop()
+        b = stack_index.pop()
+        ans[b] = nge[i]
+    stack.append(nge[i])
+    stack_index.append(i)
+
+print(*ans)
