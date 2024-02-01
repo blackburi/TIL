@@ -1,4 +1,3 @@
-from collections import deque
+equation = list(map(str, input()))
 
-equation = list(map(str, input().split(')')))
-
+stack = []
