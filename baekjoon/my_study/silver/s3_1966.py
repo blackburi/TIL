@@ -9,9 +9,9 @@ for _ in range(T):
     ans = 0
 
     while deq:
-       d_max = max(deq)
-       a = deq.popleft()
-       k -= 1
+        d_max = max(deq)
+        a = deq.popleft()
+        k -= 1
 
         if d_max == a:
             ans += 1
