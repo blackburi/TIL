@@ -19,13 +19,23 @@ print(num[n//2])
 
 # 최빈값
 dic = {}
-for i in num:
+for i in num :
     if i in dic:
         dic[i] += 1
-    else:
+    else : # i not in dic
         dic[i] = 1
+mx = max(dic.values()) # 제일 작은 최빈값
 
+mx_lst = [] # 최빈값들을 저장할 배열
 
+for i in dic :
+    if mx == dic[i] :
+        mx_lst.append(i)
+
+if len(mx_lst) >= 2 :
+    print(mx_lst[1])
+else : # len(mx_lst) == 1
+    print(mx_lst[0])
 
 
 # 범위
