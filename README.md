@@ -5,9 +5,8 @@
 # CS - 공부하기
 * [개발상식]()
 * [네트워크](./CS/network.md)
-* [운영체제]()
 * [알고리즘](./CS/algorithm.md)
-* [운영체제]()
+* [운영체제](./CS/operation_system.md)
 * [자료구조](./CS/data_construction.md)
 * [데이터베이스](./CS/database.md)
 
