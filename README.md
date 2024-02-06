@@ -2,6 +2,16 @@
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
+# CS - 공부하기
+* [개발상식]()
+* [네트워크](./CS/network.md)
+* [운영체제]()
+* [알고리즘](./CS/algorithm.md)
+* [운영체제]()
+* [자료구조](./CS/data_construction.md)
+* [데이터베이스](./CS/database.md)
+
+
 # Python - 공부하기
 * [1-1](./python_class/1-1.md)
 * [1-2](./python_class/1-2.md)
