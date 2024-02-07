@@ -3,12 +3,12 @@
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
 # CS - 공부하기
-* [개발상식]()
-* [네트워크](./CS/network.md)
-* [알고리즘](./CS/algorithm.md)
-* [운영체제](./CS/operation_system.md)
-* [자료구조](./CS/data_construction.md)
-* [데이터베이스](./CS/database.md)
+* [개발상식](./CS/01_programming.md)
+* [네트워크](./CS/02_network.md)
+* [운영체제](./CS/03_operation_system.md)
+* [데이터베이스](./CS/04_database.md)
+* [자료구조](./CS/05_data_construction.md)
+* [알고리즘](./CS/06_algorithm.md)
 
 
 # Python - 공부하기
