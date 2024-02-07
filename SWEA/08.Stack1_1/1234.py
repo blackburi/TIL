@@ -12,5 +12,4 @@ for tc in range(1, 11) :
             stack.pop()
     
     stack.reverse()
-    print(''.join(stack))
     print(f'#{tc} {"".join(stack)}')
