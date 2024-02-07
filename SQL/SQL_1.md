@@ -27,11 +27,9 @@
 * 데이터베이스는 데이터의 구조와 유지, 관리를 담당
 * 효율적인 데이터 접근 및 관리를 위해 인덱스 , 트랜잭션, 보안 등의 기능을 제공
 * 데이터베이스의 종류
-    * 관계형 데이터베이스(RDBMS)
-    * 비관계형 데이터베이스(NoSQL)
+    * 관계형 데이터베이스(RDBMS) : 행과 열이 있는것
+    * 비관계형 데이터베이스(NoSQL) : 행과 열이 없는것
 * 데이터 정의 언어(DDL)은 데이터베이스의 구조를 정의하고 조작하는 역할
-
-### 데이터베이스 생성
 1. 데이터 베이스의 생성(`CREATE DATABASE`)
     ```sql
     -- 'my_database'라는 이름의 데이터베이스를 생성한다.
@@ -58,12 +56,36 @@
     /* employees 테이블을 삭제하는 구문이다. 해당 테이블과 관련된 모든 데이터도 함께 삭제된다.*/
     DROP TABLE employees;
     ```
-5. 테이블 데이터 삽입(`INSERT INTO __ () VALUES ()`)
+
+
+## 데이터 조작 언어(DML)
+* 데이터 조작 언어(DML)는 데이터베이스에서 데이터를 검색하거나 조작하는 역할을 한다.
+1. 데이터 삽입(`INSERT INTO`)
     ```sql
-    /* 새로운 레코드와 값을 추가하였다 */
-    INSERT INTO 'employees' ('id', 'name', 'age', 'department') VALUES (1234, 'John', 20, 'MX');
+    /* employees 테이블에 새로운 데이터를 삽입하는 구문
+    id, name, age, department 열에 해당하는 값들을 지정하여 데이터 삽입 */
+    INSERT INTO employees (id, name, age, department)
+    VALUES (1, 'John Doe', 30, 'IT')
     ```
-6. 테이블 데이터 삭제(`DELETE`)
+2. 데이터 조회(`SELECT _ FROM _`)
+    ```sql
+    /* '*'는 모든 열을 의미하며
+    데이터 베이스에서 모든 행과 열을 반환한다. */
+    SELECT * FROM employees;
+    ```
+3. 테이블 데이터 변경(`UPDATE`)
+    ```sql
+    /* 테이블의 UPDATE를 진행하는데 에러가 발생했다면 safe mode를 초기화 세팅해 주면 된다.
+    에러가 발생하면 이 쿼리를 실행해 보는것을 권장 */
+    --safe mode 초기화 세팅 방법
+    SET sql_safe_updates = 0;
+
+    -- id = 1234인 데이터의 age값을 35로 update
+    UPDATE employees
+    SET age = 35
+    WHERE id = 1234
+    ```
+4. 테이블 데이터 삭제(`DELETE`)
     ```sql
     -- 먼저 SELECT문을 통해 지우고자 하는 레코드를 조회 후 삭제하는것을 권장
     SELECT * FROM 'employees';
@@ -71,12 +93,31 @@
     -- 테이블에 id = 1234인 행을 제거한다.
     DELETE FROM employees WHERE id = 1234;
     ```
-(https://www.whatap.io/ko/blog/141/)
-
-## 데이터 조작 언어(DML)
 
 
 ## 데이터 제어 언어(DCL)
-
-
-
+* 데이터 제어 언어(DCL)는 데이터베이스에 대한 접근 권한을 관리하는 역할을 한다.
+1. 사용자에게 권한 부여(`GRANT`)
+    ```sql
+    /* employees테이블에 대한 SELECT와 INSERT 권한을 user1에게 부여
+    user1은 해당 테이블에서 데이터를 조회하고 삽입할 수 있게 된다. */
+    GRANT SELECT, INSERT ON employees TO user1;
+    ```
+2. 사용자의 권한 취소(`REVOKE`)
+    ```sql
+    /* employees 테이블에 대한 UPDATE 권한을 user2로부터 취소한다.
+    user2는 해당 테이블에서 데이터를 UPDATE할수 없게 된다. */
+    REVOKE UPDATE ON employees FROM user2;
+    ```
+3. 롤(Role) 생성(`CREATE`)
+    ```sql
+    /* 'manager'라는 이름의 role을 생성하는 구문이다.
+    role은 여러 사용자에게 동일한 권한을 일괄적으로 부여하기 위해 사용한다. */
+    CREATE ROLE manager;
+    ```
+4. 롤(Role)에 권한 부여(`GRANT`)
+    ```sql
+    /* 'manager' role에게 employees 테이블에 대한 SELECT와 UPDATE 권한을 부여
+    manager role의 모든 사용자는 해당 테이블에서 데이터를 조회하고 업데이트 할수 있게 된다.*/
+    GRANT SELECT, UPDATE ON employees TO manager;
+    ```
