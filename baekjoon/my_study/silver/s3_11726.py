@@ -11,3 +11,5 @@ for i in range(2, 1001) :
     lst[i] = lst[i-1] + lst[i-2]
 
 print(lst[n]%10007)
+
+## 
