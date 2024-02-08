@@ -1,10 +1,15 @@
-def fibo(n) :
-    if n == 0 :
-        return 0
-    elif n == 1 :
-        return 1
-    else :
-        return fibo(n-1) + fibo(n-2)
+T = int(input())
+for _ in range(T) :
+    lst = list(input())
 
-n = int(input())
-print(fibo(n))
+    cnt = 0
+    for i in range(len(lst)//2) :
+        if lst[i] == lst[len(lst)-1-i] :
+            cnt += 1
+        else :
+            break
+
+    if cnt == len(lst)//2 :
+        print(1, cnt+1)
+    else :
+        print(0, cnt+1)
