@@ -1,22 +1,23 @@
-T = int(input())
+for _ in range(1, 11) :
+    tc, e = map(int, input().split())
 
-for tc in range(1, T+1) :
-    lst = list(input())
+    lst = list(map(int, input().split()))
+    graph = [[] for _ in range(100)]
 
-    a = 0 # 막대의 개수
-    cnt = 0 # 총 막대의 개수
+    for i in range(e) :
+        graph[lst[2*i]].append(lst[2*i+1])
 
-    for i in range(len(lst)) :
-        if lst[i] == '(' :
-            if lst[i+1] == ')' : # 레이저가 있는경우
-                cnt += a
-            else : # lst[i+1] == '(' 라면 lst[i] == '(' 는 막대를 나타낸다.
-                a += 1
-        else : # lst[i] == ')'
-            if lst[i-1] == '(' : # 레이저에 해당하는 괄호
-                pass
-            else : # lst[i-1] == ')' 막대에 해당하는 괄호
-                a -= 1
-                cnt += 1
+    visited = [False] * 100
+    stack = [0]
+
+    while stack :
+        p = stack.pop()
+        if not visited[p] :
+            visited[p] = True
+            for w in graph[p] :
+                stack.append(w)
     
-    print(f'#{tc} {cnt}')
+    if visited[99] is True :
+        print(f'#{tc} 1')
+    else :
+        print(f'#{tc} 0')
