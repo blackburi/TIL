@@ -16,5 +16,5 @@ def hanoi(n, start, end) :
         # 1~(n-1)번 원판을 n번 원판 위로 이동
         hanoi(n-1, 6-start-end, end)
 
-print(2**n-1)
+print(2**n-1) # 총 횟수
 hanoi(n, 1, 3)
