@@ -11,8 +11,8 @@ def change(num):
 
 N = int(input())
 switch = [-1] + list(map(int, input().split()))
-students = int(input())
-for _ in range(students):
+n = int(input()) # 학생수
+for _ in range(n):
     bg, num = map(int, input().split())
     # 남자
     if bg == 1:
@@ -23,6 +23,7 @@ for _ in range(students):
         change(num)
         for k in range(N//2):
             if num + k > N or num - k < 1 : break
+            
             if switch[num + k] == switch[num - k]:
                 change(num + k)
                 change(num - k)
