@@ -95,6 +95,10 @@ HAVING AVG(salary) > 5000
         SELECT department, COUNT(*) AS employee_count
         FROM employees
         GROUP BY department
+        /* GROUP BY와 WHERE는 같이 올 수 없다 반드시 HAVING과 함께!!
+        GROUP BY
+        HAVING
+        */
         ```
     2. `HAVING`절 : 그룹화된 데이터에 조건을 적용하여 원하는 결과를 필터링하는데 사용된다. HAVING절은 WHERE절과 유사하지만, WHERE절은 개별 행에 대한 조건을 검사하는 반면, HAVING절은 그룹화된 데이터에 조건을 적용한다. HAVING절은 집계 함수의 결과에 대한 조건을 설정하여 그룹화된 데이터를 필터링할 수 있다.
         ```sql
