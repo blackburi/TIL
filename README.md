@@ -7,8 +7,9 @@
 * [네트워크](./CS/02_network.md)
 * [운영체제](./CS/03_operation_system.md)
 * [데이터베이스](./CS/04_database.md)
-* [자료구조](./CS/05_data_construction.md)
+* [자료구조](./CS/05_data_structure.md)
 * [알고리즘](./CS/06_algorithm.md)
+* [면접 질문 도전](./CS/07_question_of_interview.md)
 
 
 # Python - 공부하기
