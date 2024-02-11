@@ -36,8 +36,9 @@
 
 
 # 백준 알고리즘 문제 풀이
-* [별찍기](./baekjoon/star)
 * [Implementation - 구현](./baekjoon/implementation)
 * [Greedy - 그리디](./baekjoon/greedy)
 * [Stack, Queue, Deque](./baekjoon/stack_queue_deque)
+* [DP - 다이나믹 프로그래밍](./baekjoon/dp)
 * [N & M](./baekjoon/N&M)
+* [별찍기](./baekjoon/star)
