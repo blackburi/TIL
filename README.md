@@ -22,6 +22,12 @@
 * [2-3](./python_class/2-3.md)
 * [2-4](./python_class/2-4.md)
 
+# Python Algorithm
+* [버블 정렬, 카운팅 정렬](./python_algorithm/01.md)
+* [배열, 비트, 이진검색, 순차 검색](./python_algorithm/02.md)
+* [아스키코드, 문자열, 브루트포스, KMP 알고리즘, 보이어-무어 알고리즘](./python_algorithm/03.md)
+* [스택, 재귀, memoization, DP, DFS, BFS](./python_algorithm/04.md)
+
 # JAVA - 공부하기
 
 
