@@ -10,8 +10,7 @@ def gop(a, b) : # a, b 모두 matrix
     for i in range(n) :
         for j in range(n) :
             for k in range(n) :
-                tmp[i][j] += a[i][k]*b[k][j]
-                tmp[i][j] %= 1000
+                tmp[i][j] = (tmp[i][j] + a[i][k]*b[k][j]) % 1000
     return tmp
 
 # 분할 정복
@@ -27,6 +26,9 @@ def square(p, q) : # p는 matrix, q는 곱하는 횟수
         return gop(gop(tem, tem), p)
 
 ans = square(mat, b)
+# for i in range(n) :
+#     for j in range(n) :
+#         ans[i][j] %= 1000
 
 for k in ans :
     print(*k)
