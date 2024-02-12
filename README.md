@@ -11,7 +11,6 @@
 * [알고리즘](./CS/06_algorithm.md)
 * [면접 질문 도전](./CS/07_question_of_interview.md)
 
-
 # Python - 공부하기
 * [1-1](./python_class/1-1.md)
 * [1-2](./python_class/1-2.md)
@@ -23,13 +22,42 @@
 * [2-4](./python_class/2-4.md)
 
 # Python Algorithm
-* [버블 정렬, 카운팅 정렬](./python_algorithm/01.md)
-* [배열, 비트, 이진검색, 순차 검색](./python_algorithm/02.md)
-* [아스키코드, 문자열, 브루트포스, KMP 알고리즘, 보이어-무어 알고리즘](./python_algorithm/03.md)
-* [스택, 재귀, memoization, DP, DFS, BFS](./python_algorithm/04.md)
+* [버블 정렬, 카운팅 정렬](./python_algorithm_class/01.md)
+* [배열, 비트, 이진검색, 순차 검색](./python_algorithm_class/02.md)
+* [아스키코드, 문자열, 브루트포스, KMP 알고리즘, 보이어-무어 알고리즘](./python_algorithm_class/03.md)
+* [스택, 재귀, memoization, DP, DFS, BFS](./python_algorithm_class/04.md)
+
+# Python Algorithm (theme)
+01. [array](./my_algorithm_study/01_array.md)
+02. [list](./my_algorithm_study/02_list.md)
+03. [stack](./my_algorithm_study/03_stack.md)
+04. [queue](./my_algorithm_study/04_queue.md)
+05. [deque](./my_algorithm_study/05_deque.md)
+06. [BFS](./my_algorithm_study/06_BFS.md)
+07. [DFS](./my_algorithm_study/07_DFS.md)
+08. [recursion](./my_algorithm_study/08_recursion.md)
+09. [backtracking](./my_algorithm_study/09_backtracking.md)
+10. [simulation](./my_algorithm_study/10_simulation.md)
+11. [sort1](./my_algorithm_study/11_sort1.md)
+12. [sort2](./my_algorithm_study/12_sort2.md)
+13. [DP](./my_algorithm_study/13_DP.md)
+14. [greedy](./my_algorithm_study/14_greedy.md)
+15. [math](./my_algorithm_study/15_math.md)
+16. [binary search](./my_algorithm_study/16_binary_search.md)
+17. [two pointer](./my_algorithm_study/17_two_pointer.md)
+18. [hash](./my_algorithm_study/18_hash.md)
+19. [binary search tree](./my_algorithm_study/19_binary_search_tree.md)
+20. [priority queue](./my_algorithm_study/20_priority_queue.md)
+21. [graph](./my_algorithm_study/21_graph.md)
+22. [tree](./my_algorithm_study/22_tree.md)
+23. [topological sorting](./my_algorithm_study/23_topological_sorting.md)
+24. [MST](./my_algorithm_study/24_MST.md)
+25. [Floyd Warshall](./my_algorithm_study/25_Floyd-Warshall.md)
+26. [Dijkstra](./my_algorithm_study/26_Dijkstra.md)
+27. [KMP](./my_algorithm_study/27_KMP.md)
+28. [Trie](./my_algorithm_study/28_Trie.md)
 
 # JAVA - 공부하기
-
 
 # SQL - 공부하기
 * [SQL과 데이터베이스의 기본 개념](./SQL/SQL_1.md)
