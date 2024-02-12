@@ -27,7 +27,7 @@
 * [아스키코드, 문자열, 브루트포스, KMP 알고리즘, 보이어-무어 알고리즘](./python_algorithm_class/03.md)
 * [스택, 재귀, memoization, DP, DFS, BFS](./python_algorithm_class/04.md)
 
-# Python Algorithm (theme)
+# Python Algorithm (theme, more details)
 01. [array](./my_algorithm_study/01_array.md)
 02. [list](./my_algorithm_study/02_list.md)
 03. [stack](./my_algorithm_study/03_stack.md)
