@@ -26,9 +26,9 @@ def square(p, q) : # p는 matrix, q는 곱하는 횟수
         return gop(gop(tem, tem), p)
 
 ans = square(mat, b)
-# for i in range(n) :
-#     for j in range(n) :
-#         ans[i][j] %= 1000
+for i in range(n) :
+    for j in range(n) :
+        ans[i][j] %= 1000
 
 for k in ans :
     print(*k)
