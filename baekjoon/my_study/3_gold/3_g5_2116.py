@@ -12,9 +12,19 @@ input = sys.stdin.readline
 n = int(input())
 dice = [list(map(int, input().rstrip().split())) for _ in range(n)]
 
-connect = {0:5, 1:3, 2:4, 3:1, 4:2, 5:0} # 바닥면 index : 윗면 index
+connect = {0:5,
+           1:3,
+           2:4,
+           3:1,
+           4:2,
+           5:0} # 바닥면 index : 윗면 index
 # 바닥면 index or 윗면 index : [옆면 index list]
-side = {0:[1, 2, 3, 4], 1:[0, 2, 4, 5], 2:[0, 1, 3, 5], 3:[0, 2, 4, 5], 4:[0, 1, 3, 5], 5:[1, 2, 3, 4]}
+side = {0:[1, 2, 3, 4],
+        1:[0, 2, 4, 5],
+        2:[0, 1, 3, 5],
+        3:[0, 2, 4, 5],
+        4:[0, 1, 3, 5],
+        5:[1, 2, 3, 4]}
 
 ans = 0 # 결과값(최댓값끼리 비교)
 
