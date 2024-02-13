@@ -1,4 +1,4 @@
-## 태완풀이
+# bit 풀이
 lst = [i for i in range(1, 11)]
 n = len(lst)
 count = 0
@@ -13,20 +13,27 @@ for i in range(1 << n):
         count += 1
 print(f"#{1} {count}")
 
-## 광영 풀이 - 수정 필요
-def dfs(idx: int, total: int) -> None:
-    global result
- 
-    if total + nums[idx] > 10 :
+# 재귀 풀이
+arr = list(map(int,input().split()))
+N = len(arr)
+c = [0]*N
+ans = []
+cnt = 0
+def powerset(idx):
+    global cnt
+    s = 0
+    if idx == N:
+        for i in range(N):
+            if c[i]:
+                s += arr[i]
+            if s>10:
+                break
+        if s == 10:
+            cnt +=1
         return
-    elif total + nums[idx] == 10 :
-        result += 1
-        return
- 
-    for i in range(idx + 1, 10) :
-        dfs(i, total + nums[idx])
-
-nums = list(range(1, 11))
-result = 0
-dfs(0, 0)
-print(f'#1 {result}')
+    c[idx] = 0
+    powerset(idx+1)
+    c[idx] = 1
+    powerset(idx+1)
+powerset(0)
+print(f'#1 {cnt}')
