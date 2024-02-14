@@ -1,4 +1,4 @@
-from pprint import pprint
+# N & M 1
 
 n, m = list(map(int, input().split()))
 
