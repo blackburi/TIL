@@ -57,6 +57,9 @@
 27. [KMP](./my_algorithm_study/27_KMP.md)
 28. [Trie](./my_algorithm_study/28_Trie.md)
 
+# Python more study
+* i
+
 # JAVA - 공부하기
 
 # SQL - 공부하기
@@ -67,9 +70,7 @@
 * [데이터 수정과 삭제](./SQL/SQL_5.md)
 * [인덱스의 성능 최적화](./SQL/SQL_6.md)
 
-
-
-# 백준 알고리즘 문제 풀이
+# 백준 알고리즘 문제 풀이 - python
 * [Implementation - 구현](./baekjoon/implementation)
     * [별찍기](./baekjoon/implementation/star)
 * [Greedy - 그리디](./baekjoon/greedy)
