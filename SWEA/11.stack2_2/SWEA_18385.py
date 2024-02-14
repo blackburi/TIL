@@ -5,6 +5,23 @@ win = {(1, 2) : 2, (2, 1) : 2,
        (2, 2) : 2,
        (3, 3) : 3}
 
+def rsp(p) : # p : 가위바위보 하는 인원의 카드 list
+    if len(p) == 1 :
+        return p.pop()
+    elif len(p) == 2 :
+        a = win[p[0][0], p[1][0]]
+        if a == p[0][0] :
+            return p[0]
+        else :
+            return p[1]
+    else : # len(p) > 2
+        q = len(p)
+        if len(p) % 2 == 0 :
+            return rsp([rsp(p[0:q//2]), rsp(p[q//2:q])])
+        else : # len(p) % 2 == 1
+            return rsp([rsp(p[0:q//2+1]), rsp(p[q//2+1:q])])
+
+
 T = int(input())
 
 for tc in range(1, T+1) :
@@ -14,32 +31,6 @@ for tc in range(1, T+1) :
     for i in range(n) :
         lst[i] = [lst[i], i] # [가위바위보 카드, index]
     
-    while lst :
-        if n%4 in [0, 3] :
-            for i in range(n//2) :
-                a = win[(lst[i][0], lst[i+1][0])]
-                if a == lst[i][0] :
-                    del lst[i+1]
-                else : # a == lst[i+1]
-                    del lst[i]
-        else : # n%4 in [1, 2] :
-            k = (n+1)//2
-            for i in range(k) :
-                a = win[(lst[i][0], lst[i+1][0])]
-                if a == lst[i][0] :
-                    del lst[i+1]
-                else : # a == lst[i+1]
-                    del lst[i]
-                
-                b = win[(lst[k-1][0], lst[k][0])]
-                if a == lst[k-1][0] :
-                    del lst[k]
-                else : # a == lst[i+1]
-                    del lst[k-1]
-
-        n = (n+1)//2
-
-        if len(lst) == 1 :
-            ans = lst.pop()
+    ans = rsp(lst)
     
     print(f'#{tc} {ans[1]+1}')
