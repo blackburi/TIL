@@ -1,20 +1,22 @@
-def f(i, k, t) : # k개의 원소를 가진 배열A, 부분집합 합이 t
-    if i == k : # 모든 원소에 대해 결정하면
-        ss = 0 # 부분집합 원소의 합
+############################################################
+
+def f(i, k) :
+    global min_v
+    if i == k :
+        s = 0 # 선택한 원소의 합
         for j in range(k) :
-            if bit[j] : # A[i]가 포함된 경우
-                ss += A[j]
-        if ss == t :
-            for j in range(k) :
-                if bit[j] : # A[j]가 포함된 경우
-                    print(A[j], end = ' ')
-            print()
+            s += arr[j][p[j]] # j행에서 p[j]열을 고른 경우에서의 합
+        if min_v > s :
+            min_v = s
     else :
-        for j in range(1, -1, -1) :
-            bit[i] = j
-            f(i+1, k, t)
-n = 10
-t = 10
-A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-bit = [0] * n
-f(0, n, t)
+        for j in range(i, k) : 
+            p[i], p[j] = p[j], p[i] # p[i] <-> p[j]
+            f(i+1, k)
+            p[i], p[j] = p[j], p[i] # 교환전으로 복구
+
+n = int(input())
+arr = [list(map(int, input().split())) for _ in range(n)]
+p = [i for i in range(n)]
+min_v = 100
+f(0, n)
+print(min_v)
