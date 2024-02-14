@@ -21,5 +21,9 @@
 # f(0, n)
 # print(min_v)
 
-a = (1, 2)
-print(a[1])
+lst = [0, 1, 2, 3, 4]
+
+idx = lst.index(3)
+lst.pop(idx)
+        
+print(lst)
