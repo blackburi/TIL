@@ -4,7 +4,7 @@ input = sys.stdin.readline
 a, b = map(int, input().split())
 cnt = 0
 
-while a != b :
+while a < b :
     if b % 10 == 1 :
         b = (b-1)//10
         cnt += 1
@@ -12,6 +12,9 @@ while a != b :
         b //= 2
         cnt += 1
     else :
+        break
+
+    if a == b :
         break
 
 if a == b :
