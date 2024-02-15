@@ -4,9 +4,17 @@ import sys
 input = sys.stdin.readline
 
 n, m = map(int, input().rstrip().split())
-lst = [i for i in range(1, n+1)]
 
-for _ in range(m) :
-    sub = []
-    while len(sub) < m :
-        
+lst = []
+
+def dfs() :
+    if len(lst) == m :
+        print(*lst)
+        return
+    
+    for i in range(1, n+1) :
+        lst.append(i)
+        dfs()
+        lst.pop()
+
+dfs()
