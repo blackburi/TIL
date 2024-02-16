@@ -58,7 +58,9 @@
 28. [Trie](./python_algorithm_details/28_Trie.md)
 
 # Python more study
-* i
+* itertool
+    * [permutation](./python_more_study/itertools/permutation.md)
+    * [combination](./python_more_study/itertools/combination.md)
 
 # JAVA - 공부하기
 
