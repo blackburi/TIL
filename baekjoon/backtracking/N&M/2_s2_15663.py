@@ -7,21 +7,23 @@ n, m = map(int, input().split())
 lst = list(map(int, input().rstrip().split()))
 lst.sort()
 
-# index를 뽑아 lst에서 뽑아 쓰기
-index = [i for i in range(n)]
-idx = []
+visited = [False] * n
 sub = []
+ans = []
 
 def dfs() :
-    if len(set(idx)) == m :
-        for i in idx :
-            sub.append(lst[i])
+    remember = 0
+    if len(sub) == m :
         print(*sub)
         return
 
-    for i in idx :
-        idx.append(i)
-        dfs()
-        idx.pop()
+    for i in range(n) :
+        if lst[i] != remember and visited[i] is False :
+            visited[i] = True
+            sub.append(lst[i])
+            remember = lst[i]
+            dfs()
+            visited[i] = False
+            sub.pop()
 
 dfs()
