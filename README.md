@@ -74,12 +74,12 @@
 
 # SQL - programmers 문제 풀이
 * SQL 고득점 Kit
-    * [SELECT](./SQL_programmers/SQL_Kit/01_select)
-    * [SUM, MAX, MIN](./SQL_programmers/SQL_Kit/02_sum_max_min)
-    * [GROUP BY](./SQL_programmers/SQL_Kit/03_group_by)
-    * [IS NULL](./SQL_programmers/SQL_Kit/04_is_null)
-    * [JOIN](./SQL_programmers/SQL_Kit/05_join)
-    * [String, Date](./SQL_programmers/SQL_Kit/06_string_date)
+    * [SELECT](./SQL_programmers/01_select)
+    * [SUM, MAX, MIN](./SQL_programmers/02_sum_max_min)
+    * [GROUP BY](./SQL_programmers/03_group_by)
+    * [IS NULL](./SQL_programmers/04_is_null)
+    * [JOIN](./SQL_programmers/05_join)
+    * [String, Date](./SQL_programmers/06_string_date)
 
 # 백준 알고리즘 문제 풀이 - python
 * [Implementation - 구현](./baekjoon/implementation)
