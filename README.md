@@ -72,6 +72,15 @@
 * [데이터 수정과 삭제](./SQL_basic/SQL_5.md)
 * [인덱스의 성능 최적화](./SQL_basic/SQL_6.md)
 
+# SQL - programmers 문제 풀이
+* SQL 고득점 Kit
+    * [SELECT](./SQL_programmers/SQL_Kit/01_select)
+    * [SUM, MAX, MIN](./SQL_programmers/SQL_Kit/02_sum_max_min)
+    * [GROUP BY](./SQL_programmers/SQL_Kit/03_group_by)
+    * [IS NULL](./SQL_programmers/SQL_Kit/04_is_null)
+    * [JOIN](./SQL_programmers/SQL_Kit/05_join)
+    * [String, Date](./SQL_programmers/SQL_Kit/06_string_date)
+
 # 백준 알고리즘 문제 풀이 - python
 * [Implementation - 구현](./baekjoon/implementation)
     * [별찍기](./baekjoon/implementation/star)
