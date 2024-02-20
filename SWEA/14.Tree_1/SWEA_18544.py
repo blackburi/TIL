@@ -1,5 +1,3 @@
-from collections import deque
-
 v = int(input())
 c1 = [0] * (v+1)
 c2 = [0] * (v+1)
@@ -13,7 +11,14 @@ for i in range(v-1) :
 
 ans = []
 visited = [False] * (v+1)
-stack = deque([1])
-while stack :
-    a = stack.popleft()
-    
+
+def dfs(x) :
+    ans.append(x)
+    visited[x] = True
+    if c1[x] != 0 :
+        dfs(c1[x])
+    if c2[x] != 0 :
+        dfs(c2[x])
+
+dfs(1)
+print(*ans)
