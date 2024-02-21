@@ -1,38 +1,33 @@
+def check() :
+    dx = [0, 1, 1, 1]
+    dy = [1, 0, 1, -1]
+    for i in range(n) :
+        for j in range(n) :
+            for k in range(4) :
+                # a, b로 다시 넣어주는 이유는 while문에서 계속 계산이 되기 때문에 초기화해주는 것
+                a = i
+                b = j
+                cnt = 0
+                while 0<=a<=n-1 and 0<=b<=n-1 and mat[a][b] == 'o' :
+                    cnt += 1
+                    a += dx[k]
+                    b += dy[k]
+                    
+                    if cnt == 5 :
+                        break
+                
+                if cnt == 5 :
+                    return 1
+    return 0
+
 T = int(input())
 
 for tc in range(1, T+1) :
     n = int(input())
-    
-    # 가로, 우하향 대각선
-    r_check = [[] for _ in range(n)]
-    # 세로, 좌하향 대각선
-    c_check = [[] for _ in range(n)]
+    mat = [list(input()) for _ in range(n)]
 
-    for i in range(n) :
-        lst = list(input())
-        for j in range(n) :
-            if lst[j] == 'o' :
-                r_check[j].append(i)
-                c_check[i].append(j)
-    
-    cnt = 0
-    for p in range(n-4) :
-        if len(r_check(p)) > 0 and len(r_check(p+1)) > 0 and len(r_check(p+2)) > 0 and len(r_check(p+3)) > 0 and len(r_check(p+4)) > 0 :
-           cnt += 1
-           break
-        if r_check :
-            for i in r_check :
-                if (i+1) in r_check
-
-    if cnt == 1 :
+    ans = check()
+    if ans == 1 :
         print(f'#{tc} YES')
-        continue
-
-    for p in range(n-4) :
-        if len(c_check(p)) > 0 and len(c_check(p+1)) > 0 and len(c_check(p+2)) > 0 and len(c_check(p+3)) > 0 and len(c_check(p+4)) > 0 :
-            cnt += 1
-            break
-
-    if cnt == 1 :
-        print(f'#{tc} YES')
-        continue
+    else : # ans == 0
+        print(f'#{tc} NO')
