@@ -1,70 +1,65 @@
-import sys
+from sys import stdin
 input = sys.stdin.readline
 from collections import deque
 
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
 r, c = map(int, input().split())
-mat = []
-# 탈출하는데 걸리는 최단시간
+board = []
 time = 0
 
-# 지훈이가 지나온 곳
-jh = deque([])
+# 지훈이와 불난 곳 저장할 곳
+F = deque()
+J = deque()
 
-# 불이 번지는 곳
-fire = deque([])
+# 지훈이와 불난곳 찾기
+for i in range(r):
+    sub = list(stdin.readline().rstrip())
+    for j in range(c):
+        if sub[j] == 'J':
+            J.append((i, j))
+        if sub[j] == 'F':
+            F.append((i, j))
+    board.append(sub)
 
-for i in range(r) :
-    sub = list(input().rstrip())
-    for j in range(c) :
-        if sub[j] == 'J' :
-            jh.append([i, j])
-        if sub[j] == 'F' :
-            fire.append([i, j])
-    mat.append(sub)
 
-def bfs() :
-    global fire, jh, time
+def bfs():
+    global F, J, time
 
     while True :
         time += 1
         tmp = []
-        # 불이 지나가는 곳
-        while fire :
-            x, y = fire.popleft()
-            for i in range(4) :
+        while F:
+            x, y = F.popleft()
+            for i in range(4):
                 mx = x + dx[i]
                 my = y + dy[i]
-                if 0 <= mx <= r-1 and 0 <= my <= c-1 :
-                    # 'x'는 지훈이가 지나간 곳 - 지훈이가 재방문하는것을 방지
-                    if mat[mx][my] == '.' or mat[mx][my] == 'x' :
-                        tmp.append([mx, my])
-        fire = deque(tmp) # tmp는 이미 list
+                if -1 < mx < r and -1 < my < c:
+                    if board[mx][my] == '.' or board[mx][my] == '$':
+                        tmp.append((mx, my))
+                        board[mx][my] = 'F'
+        F = deque(tmp)
 
-        # 지훈이가 지나가는 곳
         tmp = []
-        while jh :
-            x, y = jh.popleft()
-            # 가장자리에 도착하면 종료
-            if x == 0 or y == 0 or x == r-1 or y == c-1 :
+        while J:
+            x, y = J.popleft()
+            if x == 0 or y == 0 or x == r - 1 or y == c - 1:
                 return time
 
-            for i in range(4) :
+            for i in range(4):
                 mx = x + dx[i]
                 my = y + dy[i]
-                if 0 <= mx <= r-1 and 0 <= my <= c-1 and mat[mx][my] == '.' :
-                    tmp.append([mx, my])
-                    mat[x][y] = 'x'
-                    mat[mx][my] = 'j'
-        jh = deque(tmp) # tmp는 이미 list
+                if 0 <= mx < r and 0 <= my < c and board[nx][ny] == '.':
+                    tmp.append((nx, ny))
+                    board[x][y] = '$'
+                    board[nx][ny] = 'J'
 
-        # 지훈이가 없다면 탈출 불가능
-        if not jh :
+        J = deque(tmp)
+        if not J:
             return False
 
-# 함수 bfs()는 False와 time을 반환
-if bfs() :
+
+if bfs():
     print(time)
-else :
+else:
     print('IMPOSSIBLE')
