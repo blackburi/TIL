@@ -5,13 +5,33 @@ n = int(input())
 lst = list(map(int, input().rstrip().split()))
 m = int(input())
 
-sub = []
+# 루트 노드 찾기
 for i in range(n) :
-    if lst[i] != -1 :
-        sub.append([i, lst[i]])
+    if lst[i] == -1 :
+        root = i
 
-for i in sub :
-    if m in i :
-        del i
+# 부모노드 index의 list에 자식 노드를 append
+graph = [[] for _ in range(n)]
 
-print(sub)
+for i in range(n) :
+    graph[lst[i]].append(i)
+
+visited = [False] * n
+visited[root] = True
+cnt = 0
+
+def dfs(x) :
+    global cnt, m
+    if graph[x] == [] :
+        cnt += 1
+        return
+    elif x == m :
+        return
+    else : # graph[x] != [] and x != m
+        for w in graph[x] :
+            if visited[w] is False :
+                visited[w] = True
+                dfs(w)
+
+dfs(root)
+print(cnt)
