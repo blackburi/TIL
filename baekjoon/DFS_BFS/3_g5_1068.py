@@ -1,37 +1,22 @@
 import sys
 input = sys.stdin.readline
-
+ 
 n = int(input())
-lst = list(map(int, input().rstrip().split()))
+tree = list(map(int, input().split())) 
 m = int(input())
+ 
+def dfs(t):
+    tree[t] = -100 # 방문했음 처리
+    for i in range(n):
+        if t == tree[i]:
+            dfs(i) # 똑같이 제거되는 노드의 자식 노드라면 dfs돌림
 
-# 루트 노드 찾기
-for i in range(n) :
-    if lst[i] == -1 :
-        root = i
-
-# 부모노드 index의 list에 자식 노드를 append
-graph = [[] for _ in range(n)]
-
-for i in range(n) :
-    graph[lst[i]].append(i)
-
-visited = [False] * n
-visited[root] = True
+dfs(m)
+# 리프트리를 구하는 변수
 cnt = 0
-
-def dfs(x) :
-    global cnt, m
-    if graph[x] == [] :
+for i in range(n):
+    # 리프트리를 구해서 +1
+    if tree[i] != -100 and i not in tree:
         cnt += 1
-        return
-    elif x == m :
-        return
-    else : # graph[x] != [] and x != m
-        for w in graph[x] :
-            if visited[w] is False :
-                visited[w] = True
-                dfs(w)
-
-dfs(root)
+ 
 print(cnt)
