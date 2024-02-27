@@ -3,6 +3,7 @@
 # 상1 하2 좌3 우0
 directions = [[-1, 0], [0, 1], [1, 0], [0, -1]]
 
+# 1번~ 5번 block
 blocks = [
     [],
     [2, 3, 1, 0],
@@ -12,8 +13,6 @@ blocks = [
     [2, 3, 0, 1]
 ]
 
-T = int(input())
-############################################
 def check(x, y) :
     if 0 <= x < n and 0 <= y < n :
         return True
@@ -56,6 +55,8 @@ def get_score(start_x, start_y, start_dir) :
             dir = (dir + 2) % 4 # 반대 방향으로 전환
             score += 1
 
+
+T = int(input())
 
 for tc in range(1, t + 1) :
     n = int(input())
