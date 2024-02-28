@@ -21,4 +21,21 @@ for tc in range(1, T+1) :
         print(f'#{tc} -1')
         continue
 
-    
+    p = n//3
+    q = n % 3
+
+    if q == 0 :
+        s = lst[:p]
+        m = lst[p:2*p]
+        l = lst[2*p:]
+    elif  q == 1 :
+        s = lst[:p+1]
+        m = lst[p+1:2*p+1]
+        l = lst[2*p+1:]
+    elif q == 2 :
+        s = lst[:p+1]
+        m = lst[p+1:2*p+2]
+        l = lst[2*p+2:]
+
+    if s[-1] == m[0] :
+        
