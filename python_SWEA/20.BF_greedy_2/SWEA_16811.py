@@ -2,40 +2,42 @@ T = int(input())
 
 for tc in range(1, T+1) :
     n = int(input())
-    lst = list(map(int, input().split()))
-    lst.sort()
+    carrot = list(map(int, input().split()))
+    dic = {}
+    
+    for i in carrot :
+        if i not in dic :
+            dic[i] = 1
+        else : # i in dic
+            dic[i] += 1
 
-    # 같은 무게의 당근이 많아 조건을 만족할수 없는경우를 check하는 변수
-    check = 0
+    # 무게가 같은 것을 묶은 갯수 list
+    getsu = list(dic.values())
+    getsu.sort()
 
-    for i in range(1, max(lst)+1) :
-        if lst.count(i) > n//2 :
-            check = 1
-            break
-        if len(set(lst)) <= 2 :
-            check = 1
-            break
-
-    # 박스에 들어가는 당근의 개수조건을 만족하지 않으면 이후 동작X
-    if check == 1 :
+    for i in getsu :
+        if i > n//2 :
+            getsu = []
+    
+    if getsu == [] :
         print(f'#{tc} -1')
         continue
 
-    p = n//3
-    q = n % 3
+    # 묶음의 종류(같은 무게는 묶음)
+    kind = len(getsu)
+    if kind <= 2 :
+        print(f'#{tc} -1')
+        continue
 
-    if q == 0 :
-        s = lst[:p]
-        m = lst[p:2*p]
-        l = lst[2*p:]
-    elif  q == 1 :
-        s = lst[:p+1]
-        m = lst[p+1:2*p+1]
-        l = lst[2*p+1:]
-    elif q == 2 :
-        s = lst[:p+1]
-        m = lst[p+1:2*p+2]
-        l = lst[2*p+2:]
+    # 박스 사이의 갯수 차이의 최솟값
+    ans = sum(getsu)
 
-    if s[-1] == m[0] :
-        
+    # i, j는 각각 3개의 박스로 나눌 2개의 포인트
+    for i in range(1, kind) :
+        for j in range(i+1, kind) :
+            small = sum(getsu[:i])
+            medium = sum(getsu[i:j])
+            large = sum(getsu[j:])
+            ans = min(ans, max(small, medium, large) - min(small, medium, large))
+
+    print(f'#{tc} {ans}')
