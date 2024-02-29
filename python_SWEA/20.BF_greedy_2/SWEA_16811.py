@@ -1,8 +1,11 @@
+# 당근 포장하기
+
 T = int(input())
 
 for tc in range(1, T+1) :
     n = int(input())
     carrot = list(map(int, input().split()))
+    carrot.sort()
     dic = {}
     
     for i in carrot :
@@ -12,8 +15,10 @@ for tc in range(1, T+1) :
             dic[i] += 1
 
     # 무게가 같은 것을 묶은 갯수 list
-    getsu = list(dic.values())
-    getsu.sort()
+    getsu = list(dic.items())
+    getsu.sort(key = lambda x : x[0])
+    for i in range(len(getsu)) :
+        getsu[i] = getsu[i][1]
 
     for i in getsu :
         if i > n//2 :
@@ -33,7 +38,7 @@ for tc in range(1, T+1) :
     ans = sum(getsu)
 
     # i, j는 각각 3개의 박스로 나눌 2개의 포인트
-    for i in range(1, kind) :
+    for i in range(1, kind-1) :
         for j in range(i+1, kind) :
             small = sum(getsu[:i])
             medium = sum(getsu[i:j])
