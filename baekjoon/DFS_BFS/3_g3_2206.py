@@ -3,36 +3,42 @@ input = sys.stdin.readline
 from collections import deque
 
 n, m = map(int, input().split())
+mat = [list(map(str, input().rstrp())) for _ in range(n)]
 
-mat = [list(map(int, input())) for _ in range(n)]
+# [벽을 부수지 않고 간 거리, 벽을 부수고 간 거리]
+# 파괴 변수를 통해 파괴를 안했다면 0번, 파괴를 했다면 1번 index사용
+dp = [[[0, 0] for _ in range(m)] for _ in range(n)]
 
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
 
-# 방문체크
-# 0은 벽부수기 사용 하기 전, 1은 벽 부수기 사용 후
-# 앞은 벽부수기를 사용했는지, 뒤는 이동한 거리
-visited = [[0, 0] * m for _ in range(n)]
-
-# [x, y] : 현재 위치, z : 벽을 뚫은 횟수, w : 이동한 거리
-def move(x, y, z, w) :
-    q = deque([])
-    q.append([x, y, z, w])
+# [x, y] 위치
+def bfs(x, y) :
+    # [x, y] 위치, 파괴 유무
+    q = deque([x, y, 0])
+    dp = [x][y][0] = 1
 
     while q :
-        # [a, b] 현재위치, c 벽을 뚫은 횟수, d 이동거리
-        a, b, c, d = q.popleft()
+        # destroy는 0또는 1
+        x, y, destroy = q.popleft()
 
-        # 끝에 도착했다면 이동거리 값을 반환
-        if a == n-1 and b == m-1 :
-            return d
+        if x == n-1 and y == m-1 :
+            return dp[x][y][destroy]
         
         for i in range(4) :
-            mx = a + dx[i]
-            my = b + dy[i]
-            if mx < 0 or my < 0 or mx >= n or my > m :
-                continue
-                
-            # 다음칸으로 이동했을 때 벽이 아닌 경우
-            if mat[mx][my] == 1 and visited[mx][my][1] == 0 :
-                visited
+            mx = x+dx[i]
+            my = y+dy[i]
+            if 0 <= mx <= n-1 and 0 <= my <= m-1 :
+                # 벽을 만나는 경우 -> destroy += 1
+                if mat[mx][my] == '1' and destroy == 0 :
+                    dp[mx][my][1] = dp[x][y][0] + 1
+                    q.append([mx, my, 1])
+                    destroy += 1
+
+                # 통로를 만나는 경우
+                if mat[mx][my] == '0' :
+                    dp[mx][my][destroy] = dp[mx][my][destroy] + 1
+                    q.append([mx, my, destroy])
+
+    return -1
+
