@@ -33,7 +33,7 @@ def on(cnt, left, right) :
     # 추를 배치하고 있는 경우 - 좌측에 올리는 경우
     on(cnt+1, left+sub[cnt], right)
     # 추를 배치하고 있는 경우 - 우측에 올리는 경우
-    if left > right + sub[cnt] :
+    if left >= right + sub[cnt] :
         on(cnt+1, left, right+sub[cnt])
 
 
