@@ -47,7 +47,6 @@ for i in range(hmax) :
                 bfs(p, q, i)
                 cnt += 1
     
-    if cnt_max < cnt :
-        cnt_max = cnt
+    cnt_max = max(cnt_max, cnt)
 
 print(cnt_max)
