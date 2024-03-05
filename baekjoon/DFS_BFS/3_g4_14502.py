@@ -6,7 +6,7 @@ from itertools import combinations
 
 
 def virus() :
-    
+
 
 
 n, m = map(int, input().rstrip().split())
@@ -21,7 +21,7 @@ for i in range(n) :
             lst.append([i, j])
 
 
-# 벽을 세울 3곳을 정하기
+# 벽을 세울 3곳을 정하기a
 for a, b, c in combinations(lst, 3) :
     mat[a[0]][a[1]] = '1'
     mat[b[0]][b[1]] = '1'
