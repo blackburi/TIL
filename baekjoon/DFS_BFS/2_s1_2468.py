@@ -1,3 +1,5 @@
+# 안전 영역
+
 import sys
 input = sys.stdin.readline
 from collections import deque
