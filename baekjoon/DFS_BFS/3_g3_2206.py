@@ -1,7 +1,6 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
-from pprint import pprint
 
 n, m = map(int, input().split())
 mat = [list(map(str, input().rstrip())) for _ in range(n)]
