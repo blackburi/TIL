@@ -10,12 +10,12 @@ n, m = map(int, input().split())
 room = {}
 
 for i in range(n) :
-    name = input()
-    room[name] = [9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18,]
+    name = input().rstrip()
+    room[name] = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
 # 회의실 이름순으로 정렬
 room = dict(sorted(room.items()))
-print(room)
+
 # 회의실 예약시간을 제외하는 함수
 def book(name, start, end) :
     for i in range(start, end+1) :
@@ -29,4 +29,3 @@ for _ in range(m) :
     end = int(end)
     book(car, start, end)
 
-print(room)
