@@ -10,8 +10,13 @@ n, m = map(int, input().split())
 room = {}
 
 for i in range(n) :
+<<<<<<< HEAD
     name = input().rstrip()
     room[name] = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+=======
+    name = input()
+    room[name] = [9, 10, 11, 12, 13, 14,  15,  16, 17, 18,]
+>>>>>>> 4e50d0c55054ce960f1f81dd6478992683475954
 
 # 회의실 이름순으로 정렬
 room = dict(sorted(room.items()))
