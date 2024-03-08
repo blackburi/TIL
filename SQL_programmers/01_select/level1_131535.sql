@@ -3,4 +3,4 @@
 select count(user_id) as users
 from user_info
 where year(joined) = 2021 and
-      (20 <= age <= 29 or age = 'NULL')
+      age >= 20 and age <= 29
