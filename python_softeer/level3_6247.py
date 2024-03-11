@@ -4,20 +4,29 @@ import sys
 input = sys.stdin.readline
 
 n, q = map(int, input().split())
+
 efficiency = list(map(int, input().rstrip().split()))
-efficiency.sort()
 
 for _ in range(q) :
     m = int(input())
     
-    if m not in efficiency :
-        print(0)
-        continue
+    # m과 같은 수가 있는지 보는 것
+    tmp = 0
+    # m보다 작은수 개수 저장
+    a = 0
+    # m보다 큰수 개수 저장
+    b = 0
 
-    k = efficiency.index(m)
+    for i in efficiency :
+        if i > m :
+            a += 1
+        elif i < m :
+            b += 1
+        else : # i == m
+            tmp += 1
     
-    if k == 0 or k == n-1 :
+    if tmp == 0 :
         print(0)
         continue
-    
-    print(k*(n-k-1))
+    else :
+        print(a*b)
