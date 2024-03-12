@@ -3,30 +3,38 @@
 import sys
 input = sys.stdin.readline
 
+# n 연비의 개수
 n, q = map(int, input().split())
 
 efficiency = list(map(int, input().rstrip().split()))
+efficiency.sort()
 
 for _ in range(q) :
     m = int(input())
-    
-    # m과 같은 수가 있는지 보는 것
-    tmp = 0
-    # m보다 작은수 개수 저장
-    a = 0
-    # m보다 큰수 개수 저장
-    b = 0
 
-    for i in efficiency :
-        if i > m :
-            a += 1
-        elif i < m :
-            b += 1
-        else : # i == m
-            tmp += 1
-    
-    if tmp == 0 :
+    if m == efficiency[0] or  m == efficiency[-1] :
         print(0)
         continue
-    else :
-        print(a*b)
+
+    # index
+    start = 0
+    end = n-1 
+
+    # 값이 존재하는지를 check하는 변수
+    check = -1
+
+    while start < end :
+        tmp = (start + end)//2
+
+        if m > efficiency[tmp] :
+            start = tmp
+        elif m < efficiency[tmp] :
+            end = tmp
+        else : # m == efficiency[tmp]
+            check = tmp
+            break
+    
+    if check == -1 or check == 0 or check == n-1 :
+        print(0)
+    else : # check != 0
+        print(tmp*(n-tmp-1))
