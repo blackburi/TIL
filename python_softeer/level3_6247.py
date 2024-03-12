@@ -26,8 +26,9 @@ for _ in range(q) :
     while start < end :
         tmp = (start + end)//2
 
+
         if m > efficiency[tmp] :
-            start = tmp
+            start = tmp+1
         elif m < efficiency[tmp] :
             end = tmp
         else : # m == efficiency[tmp]
