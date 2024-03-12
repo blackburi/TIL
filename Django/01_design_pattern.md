@@ -132,7 +132,7 @@
         ```
         ```python
         # 3. 패키지 설치
-
+        $ pip install -r requirements.txt
         ```
         * python 3.10 이상일 경우는 Django 5버전이 설치된다. 버전정보가 맞아야 하기 때문에 꼭 확인을 해야 한다.
     4. 의존성 파일 생성 : 패키지 설치시마다 진행
