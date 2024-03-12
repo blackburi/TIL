@@ -111,13 +111,41 @@
 
 ### Django 프로젝트
 * Django 프로젝트 생성 전 루틴
+    0. `.gitignore` 파일 생성
     1. 가상환경 생성
+        ```python
+        # 1. 가상환경(venv) 생성
+        # python -m venv '가상 환경 이름'
+        $ python -m venv venv
+        ```
     2. 가상환경 활성화
+        ```python
+        # 2. 가상환경 활성화
+        # source '가상 환경 이름'/S + tab/act + tab
+        # tab key를 누른다면 자동완성해준다.
+        $ source venv/Scripts/activate
+        ```
     3. Django 설치
+        ```python
+        # 3. Django 설치
+        $ pip install django
+        ```
+        * python 3.10 이상일 경우는 Django 5버전이 설치된다. 버전정보가 맞아야 하기 때문에 꼭 확인을 해야 한다.
     4. 의존성 파일 생성 : 패키지 설치시마다 진행
+        ```python
+        # 4. 의존성 파일 생성
+        # pip freeze > 'text 파일명'.txt
+        # 반드시 txt 이름이 requirements일 필요는 없지만 암묵적인 약속
+        $ pip freeze > requirements.txt
+        ```
+    5. `git` 저장소 생성
+    6. Django 프로젝트 생성
+        ```python
+        # 6. Django 프로젝트 생성
+        # $ django-admin  'project name'
+        ```
 
 
-p.44 부터
 
 
 
