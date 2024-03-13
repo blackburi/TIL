@@ -127,7 +127,7 @@
     * `{% block name %}{% endblock name %}`
     * 하위 템플릿에서 재정의 할 수 있는 블록을 정의 (상위 템플릿에 작성하며 하위 템플릿이 작성할 수 있는 공간을 지정하는 것)
 
-    ![block inheritance](../image/block_template_inheritance.png)
+    ![block inheritance](../image/block_template_inheritance_django.png)
 
 
 ## HTML form (요청과 응답)
@@ -169,16 +169,19 @@
     * `action`
         * 입력 데이터가 전송될 URL을 지정 (목적지)
         * 만약 이 속성을 지정하지 않으면 데이터는 현재 form이 있는 페이지의 URL로 보내짐
+        * `action`에 들어가는 url을 비워둔다면 현재 주소(현재 페이지)로 data를 전송하게 된다.
     * `method`
         * 데이터를 어떤 방식으로 보낼 것인지 정의
         * 데이터의 HTTP request methods(GET, POST)를 지정
             * `GET` : url에 노출되도록 사용 ex) 검색기능
             * `POST` : 노출이 되지 않길 원하는 경우 사용 ex) 로그인
+        * `method`를 설정하지 않으면 기본값인 `GET`으로 설정된다.
 * `input` element
     * 사용자의 데이터를 입력 받을 수 있는 요소 (type 속성 값에 따라 다양한 유형의 입력 데이터를 받음)
     * `name` attribute : input의 핵심 속성
         * 입력한 데이터에 붙이는 이름(key)
             * 데이터를 제출했을 때 서버는 name 속성에 설정된 값을 통해서만 사용자가 입력한 데이터에 접근할 수 있음
+        * name에 아무것도 적지 않은 것은 마치 python에서 input()을 받을때 `n = int(input())`처럼 저장하는 것이 아닌 `int(input())`으로 받기만 하는것과 동일하다.
 * Query String Parameters
     * 사용자의 입력 데이터를 URL 주소에 파라미터를 통해 서버로 보내는 방법
     * 문자열은 앰퍼샌드('&')로 연결된 key=value쌍으로 구성되며, 기본 URL과는 물음표('?')로 구분됨
