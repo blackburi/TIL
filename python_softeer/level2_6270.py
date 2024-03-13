@@ -20,24 +20,26 @@ for _ in range(m) :
     c, d = map(int, input().split())
     check.append((c, d))
 
-# 속도 차이의 최댓값
-vmax = 0
-
 # 총 이동거리
 distance = 0
+
+# 속도 차이의 최댓값
+vmax = 0
 
 # lst에서 거리와 비교할 index 변수
 idx = 0
 
 while check :
+    x, y = check.popleft()
+    distance += x
+
+    vmax = max(vmax, y - lst[idx][1])
+
     if distance > lst[idx][0] :
+        idx += 1
         vmax = max(vmax, y - lst[idx][1])
-    else : # distance <= lst[idx][0]
-        vmax = max(vmax, y - lst[idx][1])
-        x, y = check.popleft()
-        distance += x
-        vmax = max(vmax, y - lst[idx][1])
-    idx += 1
-    print(vmax)
+    elif distance == lst[idx][0] :
+        idx += 1
+    # distance < lst[idx][0] 인 경우 변화없이 distance를 늘려서 비교
 
 print(vmax)
