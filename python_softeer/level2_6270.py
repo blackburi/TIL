@@ -30,16 +30,18 @@ vmax = 0
 idx = 0
 
 while check :
+    if idx >= n :
+        idx = n-1
+
     x, y = check.popleft()
     distance += x
 
     vmax = max(vmax, y - lst[idx][1])
-
     if distance > lst[idx][0] :
-        idx += 1
-        vmax = max(vmax, y - lst[idx][1])
+        while distance > lst[idx][0] :
+            idx += 1
+            vmax = max(vmax, y - lst[idx][1])
     elif distance == lst[idx][0] :
         idx += 1
-    # distance < lst[idx][0] 인 경우 변화없이 distance를 늘려서 비교
 
 print(vmax)
