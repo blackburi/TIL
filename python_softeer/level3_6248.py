@@ -46,28 +46,22 @@ def bfs(start, graph, visited) :
                 q.append(w)
 
 # 출근1 s->t
-visited_go_cycle = [False] * (n+1)
-visited_go_cycle[s] = True
-visited_go_cycle[t] = True
-bfs(s, graph_go, visited_go_cycle)
+visited_go_end = [False] * (n+1)
+visited_go_end[t] = True
+bfs(s, graph_go, visited_go_end)
 
 # 출근2 s->s
-visited_go_end = [False] * (n+1)
-visited_go_end[s] = True
-visited_go_end[t] = True
-bfs(s, graph_back, visited_go_end)
+visited_go_cycle = [False] * (n+1)
+bfs(s, graph_back, visited_go_cycle)
 
 # 퇴근1 t->s
-visited_back_cycle = [False] * (n+1)
-visited_back_cycle[s] = True
-visited_back_cycle[t] = True
-bfs(t, graph_back, visited_back_cycle)
-
-# 퇴근2 t->t
 visited_back_start = [False] * (n+1)
 visited_back_start[s] = True
-visited_back_start[t] = True
 bfs(t, graph_go, visited_back_start)
+
+# 퇴근2 t->t
+visited_back_cycle = [False] * (n+1)
+bfs(t, graph_back, visited_back_cycle)
 
 # 출퇴근시 모두 겹치는 노드를 세는 변수
 cnt = 0
