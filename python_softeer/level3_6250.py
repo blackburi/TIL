@@ -28,11 +28,12 @@ def result(lst) :
             ans[idx] = i+1
         else :
             if score == last_score :
-                ans[idx] = ans[idx-1]
+                ans[idx] = ans[last_idx]
             else :
                 ans[idx] = i+1
         
         last_score = score
+        last_idx = idx
 
     print(*ans)
 
