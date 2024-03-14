@@ -48,6 +48,7 @@
     * url tag
         * `{% url 'url name' arg1 arg2 %}`
         * 주어진 URL 패턴의 이름과 일치하는 절대 경로 주소를 반환
+        * 절대로 comma(`,`)가 아닌 just 띄어쓰기!! 주의할것!!
 
 ### URL 이름 공간
 * url 이름 지정 후 남은 문제
@@ -113,6 +114,7 @@
     * `$ python manage.py migrate` : 최종 설계도를 DB에 전달하여 반영
 * migrate 후 DB 내에 생성 된 테이블 확인
     * article 모델 클래스로 만들어진 articles_article 테이블
+    * 'app이름_class명' 형식으로 생성
 
         ![django_migrate_DB_table](../image/django_migrate_DB_table.png)
 
