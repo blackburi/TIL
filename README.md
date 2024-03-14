@@ -92,3 +92,11 @@
 
 # Web
 * [Web - HTML, CSS](./Web/01_web_html_css.md)
+* [Web - CSS Layout](./Web/02_web_css_layout.md)
+* [Web - bootstrap](./Web/03_web_bootstrap.md)
+* [Web - bootstrap grid system](./Web/04_web_bootstrap_grid_system.md)
+
+# Django
+* [design pattern](./Django/01_design_pattern.md)
+* [template & urls](./Django/02_template&urls.md)
+* [model](./Django/03_model.md)
