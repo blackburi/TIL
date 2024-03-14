@@ -37,6 +37,7 @@ while check :
     distance += x
 
     vmax = max(vmax, y - lst[idx][1])
+
     if distance > lst[idx][0] :
         while distance > lst[idx][0] :
             idx += 1
