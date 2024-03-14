@@ -38,11 +38,11 @@ while check :
 
     vmax = max(vmax, y - lst[idx][1])
 
-    if distance > lst[idx][0] :
-        while distance > lst[idx][0] :
-            idx += 1
-            vmax = max(vmax, y - lst[idx][1])
-    elif distance == lst[idx][0] :
+    while distance > lst[idx][0] :
+        idx += 1
+        vmax = max(vmax, y - lst[idx][1])
+
+    if distance == lst[idx][0] :
         idx += 1
 
 print(vmax)
