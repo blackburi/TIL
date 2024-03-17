@@ -104,6 +104,9 @@
     </html>
     ```
 
+    ![result of box model css](../image/result_of_box_model_css.png)
+
+
 ### 박스 타입
 * Normal flow
     * CSS를 적용하지 않았을 경우 웹페이지 요소가 기본적으로 배치되는 방향
