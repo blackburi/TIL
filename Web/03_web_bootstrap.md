@@ -156,12 +156,15 @@
 </html>
 ```
 
+![result_of_typography_html](../image/result_of_typography_html.png)
+
 
 ### Colors
 * bootstrap color system : bootstrap이 지정하고 제공하는 색상 시스템
 * text, border, background 및 다양한 요소에 사용하는 bootstrap의 색상 키워드
 
 ```html
+<!-- 실행해서 보기 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -243,7 +246,7 @@
     <body>
         <div class="box bg-info border border-dark"></div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>v
+    </body>
     </html>
     ```
 
