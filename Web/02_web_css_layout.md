@@ -346,7 +346,7 @@
     2. relative
         * 요소를 Normal Flow에 따라 배치
         * 자기 자신을 기준으로 이동
-        * 요소가 차지갛는 공간은 static일 때와 같음
+        * 요소가 차지하는 공간은 static일 때와 같음
     3. absolute
         * 요소를 Normal Flow에서 제거 -> 따르지 않음
         * 가장 가까운 relative 부모 요소를 기준으로 이동
@@ -358,7 +358,6 @@
     5. sticky
         * 요소를 Normal Flow에 따라 배치
         * 요소가 일반적인 문서 흐름에 따라 배치되다가 스크롤이 **특정 임게점**에 도달하면 그 위치에 고정됨(fixed)
-        * 만약 다음 sticky요소가 
     ```html
     <!DOCTYPE html>
     <html>
@@ -892,17 +891,29 @@
 ### 정리
 * 코드로 보고 분석하는 것도 좋지만 직접 눈으로 결과값(image)를 보면서 이해하는것이 더 빠른 이해와 도움이 될 것이다.
 * `flex-direction`
-![flex-direction](../image/flex_direction_css.png)
+
+    ![flex-direction](../image/flex_direction_css.png)
+
 * `flex-wrap`
-![flex-wrap](../image/flex_wrap_css.png)
+
+    ![flex-wrap](../image/flex_wrap_css.png)
+
 * `justify-content`
-![justify-content](../image/justify_content_css.png)
+
+    ![justify-content](../image/justify_content_css.png)
+
 * `align-content`
-![align-content](../image/align_content_css.png)
+
+    ![align-content](../image/align_content_css.png)
+
 * `align-items`
-![align-items](../image/align_items_css.png)
+
+    ![align-items](../image/align_items_css.png)
+
 * `align-self`
-![align-self](../image/align_self_css.png)
+
+    ![align-self](../image/align_self_css.png)
+    
 
 ### 참고
 * `justify-items` 및 `justify-self` 속성이 없는이유
