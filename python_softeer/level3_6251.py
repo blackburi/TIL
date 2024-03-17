@@ -1,5 +1,11 @@
 # 업무 처리
 
+# 전부 돌리지 않고 해결할수 있는 풀이는 없을까 ? 
+# 사실 높이가 주어지는 순간부터 일이 해결되는 말단직원의 업무의 순서는 정해진다
+# 이것을 이용할순 없을까?
+
+# 풀이 1
+
 import sys
 input = sys.stdin.readline
 
@@ -36,3 +42,21 @@ for i in range(h) :
                 end[i+1][2*j].append(tmp[k])
             else : # k % 2 == 1
                 end[i+1][2*j+1].append(tmp[k])
+
+end_task = end[h]
+dp = [0 for _ in range(h+2**h*k)]
+
+present = h
+
+for i in range(k) :
+    for j in range(len(end_task)) :
+        dp[present] = tasks[end_task[j][0]][i]
+        present += 1
+
+for i in range(h+2**h*k-1) :
+    dp[i+1] += dp[i]
+
+if h +  2**h*k >= r :
+    print(dp[r-1])
+else :
+    print(dp[-1])
