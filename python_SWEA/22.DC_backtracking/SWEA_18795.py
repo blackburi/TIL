@@ -1,4 +1,4 @@
-
+# 퀵 정렬 연습
 
 def quick_sort(arr) :
     if len(arr) <= 1 :
