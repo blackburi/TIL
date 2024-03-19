@@ -13,10 +13,10 @@ tasks = []
 for _ in range(2**h) :
     tasks.append(list(map(int, input().rstrip().split())))
 
+graph = [[0] for _ in range()]
 # 홀수번째 날엔 왼쪽 부하직원, 짝수번째 날엔 오른쪽 부하직원
+# 처음으로 업무가 완료되는 날이 짝수 날인 경우 -> 왼쪽 부하직원의 업무를 먼저 처리했음
+if (h+1) % 2 == 0 :
 
-# 말단직원에게 number를 부여했을때 업무가 처리되는 순서를 결정
-number = [i for i in range(2**h)]
-tmp = 1
 
-while 
+# 처음으로 업무가 완료되는 날이 홀수 날인 경우 -> 오른쪽 부하직원의 업무를 먼저 처리했음
