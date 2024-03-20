@@ -1,19 +1,29 @@
 # 연산
 
-def dfs(x, tmp) :
-    global m, cnt
+from collections import deque
 
-    if x == m :
-        cnt = min(cnt, tmp)
-        return
+def bfs() :
+    global n, m
 
-    if tmp >= cnt :
-        return
-
-    dfs(x+1, tmp+1)
-    dfs(x-1, tmp+1)
-    dfs(x-10, tmp+1)
-    dfs(x*2, tmp+1)
+    dp[n] = 0
+    q = deque([n])
+    while q :
+        k = q.popleft()
+        if k+1 <= 2*m+1 and dp[k+1] == -1 :
+            dp[k+1] = dp[k]+1
+            q.append(k+1)
+        if k-1 >= 1 and dp[k-1] == -1 :
+            dp[k-1] = dp[k]+1
+            q.append(k-1)
+        if 2*k <= 2*m+1 and dp[2*k] == -1 :
+            dp[2*k] = dp[k]+1
+            q.append(2*k)
+        if k-10 >= 10 and dp[k-10] == -1 :
+            dp[k-10] = dp[k] +1
+            q.append(k-10)
+        
+        if dp[m] != -1 :
+            break
 
 
 T = int(input())
@@ -21,8 +31,8 @@ T = int(input())
 for tc in range(1, T+1) :
     n, m = map(int, input().split())
 
-    # 시행 횟수 최댓값
-    cnt = abs(m-n)
-    dfs(n, 0)
+    # 시행횟수 저장
+    dp = [-1] * (2*m+1)
+    bfs()
 
-    print(f'#{tc} {cnt}')
+    print(f'#{tc} {dp[m]}')
