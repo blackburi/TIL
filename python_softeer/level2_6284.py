@@ -1,3 +1,5 @@
+# 바이러스
+
 import sys
 input = sys.stdin.readline
 
