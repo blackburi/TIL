@@ -15,6 +15,7 @@
 
 import sys
 input = sys.stdin.readline
+from collections import deque
 
 # 신호는 0초부터 시작 즉 1초면 한번 바뀜
 rgb = {1 : [(-1, 0), (0, 1), (1, 0)],
@@ -41,11 +42,37 @@ for i in range(n**2) :
 
 # 방문 체크
 # 한 교차로를 4개의 방문체크를 두는 이유는
-# 4초마다 모든 교차로가 cycle
+# 4초마다 모든 교차로가 cycle (bfs로 돌리기 때문)
 # -> 같은 신호에 들어온경우 이전에 check했다면 또다시 check할 필요 X "backtracking"
-visited = [[False, False, False, False] * n for _ in range(n)]
+visited = [[[0, 0, 0, 0] for _ in range(n)] for _ in range(n)]
 
 # time = 출발한 순간으로부터의 시간
 # time == t가 되는 순간 break
-time = 0
 
+def bfs() :
+    # start_row, start_col, time = 1, 0, 0
+    visited[0][0][0] = 1
+    q = deque([[0, 0, 0]])
+    while q :
+        r, c, sec = q.popleft()
+        if sec > t :
+            continue
+        for (i, j) in rgb[mat[r][c][sec%4]]:
+            mr = r + i
+            mc = c + j
+            if 0 <= mr <= n-1 and 0 <= mc <= n-1 and visited[mr][mc][(sec+1)%4] == 0 and sec+1 <= t :
+                visited[mr][mc][(sec+1)%4] = 1
+                q.append([mr, mc, sec+1])
+
+
+cnt = 0
+
+if n == 1 :
+    print(1)
+else : # n != 1
+    bfs()
+    for i in range(n) :
+        for j in range(n) :
+            if 1 in visited[i][j] :
+                cnt += 1
+    print(cnt)
