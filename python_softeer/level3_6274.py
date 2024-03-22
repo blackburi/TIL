@@ -10,7 +10,6 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
-from pprint import pprint
 
 # 신호는 0초부터 시작 즉 1초면 한번 바뀜
 # dictionary 원소 => 신호 number : (자동차가 들어오는 방향, dx, dy, 자동차가 나가는 방향)
@@ -75,14 +74,13 @@ visited = [[[0, 0, 0, 0] for _ in range(n)] for _ in range(n)]
 # time == t+1이 되는 순간 break
 
 def bfs() :
-    # start_row, start_col, time, start_direction = 1, 0, 0, 'u'
+    # start_row, start_col, time, start_direction = 0, 0, 0, 'u'
     visited[0][0][0] = 1
     q = deque([[0, 0, 0, 'u']])
     while q :
         # out_dir = 자동차의 마지막 이동 방향
         r, c, sec, out_dir = q.popleft()
-        if sec > t :
-            continue
+
         for (i, j) in rgb[mat[r][c][sec%4]]:
             in_dir = directions_in[mat[r][c][sec%4]]
             mr = r + i
