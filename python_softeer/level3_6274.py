@@ -10,6 +10,7 @@
 import sys
 input = sys.stdin.readline
 from collections import deque
+from pprint import pprint
 
 # 신호는 0초부터 시작 즉 1초면 한번 바뀜
 # dictionary 원소 => 신호 number : (자동차가 들어오는 방향, dx, dy, 자동차가 나가는 방향)
@@ -50,7 +51,7 @@ def direction(x, y) :
         return 'r'
     elif x == 1 and y == 0 :
         return 'd'
-    elif x == 0 and y == -1 :
+    else : # x == 0 and y == -1
         return 'l'
 
 # n, 시간
@@ -74,28 +75,27 @@ visited = [[[0, 0, 0, 0] for _ in range(n)] for _ in range(n)]
 # time == t+1이 되는 순간 break
 
 def bfs() :
-    # start_row, start_col, time, start_direction = 0, 0, 0, 'u'
+    if 'u' != directions_in[mat[0][0][0]] :
+        return
+
     visited[0][0][0] = 1
-    q = deque([[0, 0, 0, 'u']])
+    # r, c, sec
+    q = deque([[0, 0, 0]])
     while q :
         # out_dir = 자동차의 마지막 이동 방향
-        r, c, sec, out_dir = q.popleft()
-
+        r, c, sec = q.popleft()
         for (i, j) in rgb[mat[r][c][sec%4]]:
-            in_dir = directions_in[mat[r][c][sec%4]]
             mr = r + i
             mc = c + j
-            if 0 <= mr <= n-1 and 0 <= mc <= n-1 and in_dir == out_dir and visited[mr][mc][(sec+1)%4] == 0 and sec+1 <= t :
+            if 0 <= mr <= n-1 and 0 <= mc <= n-1 and direction(i, j) == directions_in[mat[mr][mc][(sec+1)%4]] and visited[mr][mc][(sec+1)%4] == 0 and sec+1 <= t :
                 # 방문check
                 visited[mr][mc][(sec+1)%4] = 1
                 # 자동차 진행방향 최신화(out_dir -> in_dir)
-                q.append([mr, mc, sec+1, direction(i, j)])
+                q.append([mr, mc, sec+1])
+                pprint(visited)
 
 
 cnt = 0
-
-if 'u' == directions_in[mat[0][0][0]] :
-    visited[0][0][0] = 1
 
 bfs()
 for i in range(n) :
