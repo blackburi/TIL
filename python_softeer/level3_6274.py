@@ -82,18 +82,17 @@ def bfs() :
     # r, c, sec
     q = deque([[0, 0, 0]])
     while q :
-        # out_dir = 자동차의 마지막 이동 방향
         r, c, sec = q.popleft()
-        for (i, j) in rgb[mat[r][c][sec%4]]:
+        for (i, j) in rgb[mat[r][c][sec%4]] :
             mr = r + i
             mc = c + j
+            # direction(i, j) : 현재 자동차의 진행 방향
+            # directions_in[mat[mr][mc][(sec+1)%4]] : 신호등을 받기 위해 필요한 자동차의 진행방향
             if 0 <= mr <= n-1 and 0 <= mc <= n-1 and direction(i, j) == directions_in[mat[mr][mc][(sec+1)%4]] and visited[mr][mc][(sec+1)%4] == 0 and sec+1 <= t :
                 # 방문check
                 visited[mr][mc][(sec+1)%4] = 1
-                # 자동차 진행방향 최신화(out_dir -> in_dir)
                 q.append([mr, mc, sec+1])
-                pprint(visited)
-
+    return
 
 cnt = 0
 
