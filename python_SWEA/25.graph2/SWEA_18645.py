@@ -1,42 +1,45 @@
 # 최소 비용
 
-from heapq import heappush, heappop
-
-
-def prim(start) :
-    pq = []
-    visited = [0] * (n**2)
-
-    # 최소 비용
-    min_cost = 0
-
-    # (cost, node)형태로 집어넣음
-    heappush(pq, (0, start))
-
-    while pq :
-        cost, now = heappop(pq)
-
-        # 이미 기존에 더 짧은 거리로 방문했다면 continue
-        if visited[now] :
-            continue
-
-        # 방문처리
-        visited[now] = 1
-        # 누적합 추가
-        min_cost += cost
-
-        # 갈수 있는 노드들을 보면서
-        for go in 
-
-
-
+from collections import deque
 
 T = int(input())
 for tc in range(1, T+1) :
     n = int(input())
-    graph = [[] for _ in range(n**2)]
-    for i in range(n**2) :
-        if i == 0 :
-            graph[i] = (i+1, i+n)
-        elif i < n-1 :
-            graph[i]
+    mat= [list(map(int, input().split())) for _ in range(n)]
+
+    visited = [[-1 for _ in range(n)] for _ in range(n)]
+    visited[0][0] = 0
+
+    dx = [0, 0, 1, -1]
+    dy = [1, -1, 0, 0]
+
+    q = deque([(0, 0)])
+    while q :
+        x, y = q.popleft()
+        for i in range(4) :
+            mx = x + dx[i]
+            my = y + dy[i]
+            if 0 <= mx <= n-1 and 0 <= my <= n-1 :
+                # 아직 방문하지 않았다면
+                if visited[mx][my] == -1 :
+                    # 올라가는 경우
+                    if mat[mx][my] > mat[x][y] :
+                        visited[mx][my] = visited[x][y] + mat[mx][my] - mat[x][y] + 1
+                    # 내려가는 경우
+                    else : # mat[mx][my] <= mat[x][y]
+                        visited[mx][my] = visited[x][y] + 1
+                    q.append((mx, my))
+                # 방문한 적이 있다면
+                else : # visited[mx][my] != -1
+                    # 올라가는 경우
+                    a = visited[mx][my]
+                    if mat[mx][my] > mat[x][y] :
+                        visited[mx][my] = min(visited[mx][my], visited[x][y] + mat[mx][my] - mat[x][y] + 1)
+                    # 내려가는 경우
+                    else : # mat[mx][my] <= mat[x][y]
+                        visited[mx][my] = min(visited[mx][my], visited[x][y] + 1)
+
+                    if a != visited[mx][my] :
+                        q.append((mx, my))
+
+    print(f'#{tc} {visited[n-1][n-1]}')
