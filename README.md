@@ -2,6 +2,7 @@
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
+
 # CS - 공부하기
 * [개발상식](./CS/01_programming.md)
 * [네트워크](./CS/02_network.md)
@@ -10,6 +11,7 @@
 * [자료구조](./CS/05_data_structure.md)
 * [알고리즘](./CS/06_algorithm.md)
 * [면접 질문 도전](./CS/07_question_of_interview.md)
+
 
 # Python - 공부하기
 * [1-1](./python_class/1-1.md)
@@ -21,11 +23,13 @@
 * [2-3](./python_class/2-3.md)
 * [2-4](./python_class/2-4.md)
 
+
 # Python Algorithm
 * [버블 정렬, 카운팅 정렬](./python_algorithm_class/01.md)
 * [배열, 비트, 이진검색, 순차 검색](./python_algorithm_class/02.md)
 * [아스키코드, 문자열, 브루트포스, KMP 알고리즘, 보이어-무어 알고리즘](./python_algorithm_class/03.md)
 * [스택, 재귀, memoization, DP, DFS, BFS](./python_algorithm_class/04.md)
+
 
 # Python Algorithm (theme, more details)
 01. [array](./python_algorithm_details/01_array.md)
@@ -57,12 +61,15 @@
 27. [KMP](./python_algorithm_details/27_KMP.md)
 28. [Trie](./python_algorithm_details/28_Trie.md)
 
+
 # Python more study
 * itertool
     * [permutation](./python_more_study/itertools/permutation.md)
     * [combination](./python_more_study/itertools/combination.md)
 
+
 # JAVA - 공부하기
+
 
 # SQL - 공부하기
 * [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
@@ -72,14 +79,16 @@
 * [데이터 수정과 삭제](./SQL_basic/SQL_5.md)
 * [인덱스의 성능 최적화](./SQL_basic/SQL_6.md)
 
+
 # SQL - programmers 문제 풀이
-* SQL 고득점 Kit
+* SQL 고득점 Kit (programmers)
     * [SELECT](./SQL_programmers/01_select)
     * [SUM, MAX, MIN](./SQL_programmers/02_sum_max_min)
     * [GROUP BY](./SQL_programmers/03_group_by)
     * [IS NULL](./SQL_programmers/04_is_null)
     * [JOIN](./SQL_programmers/05_join)
     * [String, Date](./SQL_programmers/06_string_date)
+
 
 # 백준 알고리즘 문제 풀이 - python
 * [Stack, Queue, Deque](./baekjoon/stack_queue_deque)
@@ -107,12 +116,14 @@
 * [Trie](./baekjoon/trie)
 * [Implementation - 구현](./baekjoon/implementation)
     * [별찍기](./baekjoon/implementation/star)
+* [unorganized things](./baekjoon/my_study)
 
 # Web
 * [Web - HTML, CSS](./Web/01_web_html_css.md)
 * [Web - CSS Layout](./Web/02_web_css_layout.md)
 * [Web - bootstrap](./Web/03_web_bootstrap.md)
 * [Web - bootstrap grid system](./Web/04_web_bootstrap_grid_system.md)
+
 
 # Django
 * [design pattern](./Django/01_design_pattern.md)
