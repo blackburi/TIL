@@ -129,3 +129,4 @@
 * [design pattern](./Django/01_design_pattern.md)
 * [template & urls](./Django/02_template&urls.md)
 * [model](./Django/03_model.md)
+* [ORM](./Django/04_ORM.md)
