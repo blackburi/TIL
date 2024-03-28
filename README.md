@@ -131,3 +131,5 @@
 * [template & urls](./Django/02_template&urls.md)
 * [model](./Django/03_model.md)
 * [ORM](./Django/04_ORM.md)
+* [Form](./Django/05_Form.md)
+* [static](./Django/06_static.md)
