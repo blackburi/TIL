@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 ```
 $ pip freeze > requirements.txt
 ```
+
 * Django shell
     * Django 환경 안에서 실행되는 python shell
     * 입력하는 QuerySet API 구문이 Django 프로젝트에 영향을 미침
@@ -60,7 +61,29 @@ $ pip freeze > requirements.txt
         ```
         $ python manage.py shell_plus
         ```
+
 ## Create
+* 외부 라이브러리 설치 및 설정
+    ```
+    $ pip install ipython
+    $ pip install django-extensions
+    ```
+    ```python
+    # settings.py
+
+    INSTALLED_APPS = [
+        'articles',
+        'django_extensions',
+    ]
+    ```
+    ```
+    $ pip freeze > requirements.txt
+    ```
+
+* Django shell
+    * Django 환경 안에서 실행되는 python shell
+    * 입력하는 QuerySet API 구문이 Django 프로젝트에 영향을 미침
+    * 실행 : `$ python manage.py shell_plus`
 
 ## Read
 
@@ -167,6 +190,7 @@ $ pip freeze > requirements.txt
 
         ![django_result_url](../image/django_result_url.png)
 
+
 ## redirect
 * 게시글 작성 후 완료를 알리는 페이지를 응답하는 것
     * 게시글을 조회 요청이 아닌 작성 요청이기 때문에 게시글 저장 후 페이지를 응답하는 것은 POST 요청에 대한 적절한 응답이 아님
@@ -186,7 +210,24 @@ $ pip freeze > requirements.txt
 
         ![django_redirect_result](../image/django_redirect_result.png)
 
+
 ## Delete
+* 데이터 삭제
+    * 삭제하려는 데이터 조회 후 delete method 호출
+
+        ```python
+        # 삭제할 인스턴스 조회
+        >>> article = Article.objects.get(pk=1)
+
+        # delete 매서드 호출 (삭제 된 객체가 반환)
+        >>> article.delete()
+        (1, {'articles.Article' : 1})
+
+        # 삭제한 데이터는 더이상 조회할 수 없음
+        >>> Article.objects.get(pk=1)
+        DoesNotExist: Article matching query does not exist.
+        ```
+
 
 ## Update
 * Update 로직을 구현하기 위해 필요한 view함수의 개수는?
