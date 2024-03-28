@@ -43,7 +43,7 @@
 
         * 추가 경로에 이미지 파일 배치
 
-            ![django_static_additional_path_position_image](image.png)
+            ![django_static_additional_path_position_image](../image/django_static_additional_path_position_image.png)
 
         * static tag를 사용해 이미지 파일에 대한 경로 제공
 
@@ -52,6 +52,7 @@
         * 이미지를 제공받기 위해 요청하는 Request URL 확인
 
             ![django_static_additional_path_request_url](../image/django_static_additional_path_request_url.png)
+
 * 정적 파일을 제공하려면 요청에 응답하기 위한 **URL**이 필요
 
 
