@@ -133,3 +133,4 @@
 * [ORM](./Django/04_ORM.md)
 * [Form](./Django/05_Form.md)
 * [static](./Django/06_static.md)
+* [Authentication System](./Django/07_Authentications_system.md)
