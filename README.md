@@ -2,8 +2,8 @@
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
-
-# CS - 공부하기
+# Study
+## CS - 공부하기
 * [개발상식](./CS/01_programming.md)
 * [네트워크](./CS/02_network.md)
 * [운영체제](./CS/03_operation_system.md)
@@ -12,8 +12,7 @@
 * [알고리즘](./CS/06_algorithm.md)
 * [면접 질문 도전](./CS/07_question_of_interview.md)
 
-
-# Python - 공부하기
+## Python
 * [1-1](./python_class/1-1.md)
 * [1-2](./python_class/1-2.md)
 * [1-3](./python_class/1-3.md)
@@ -23,15 +22,40 @@
 * [2-3](./python_class/2-3.md)
 * [2-4](./python_class/2-4.md)
 
+## Python more study
+* itertool
+    * [permutation](./python_more_study/itertools/permutation.md)
+    * [combination](./python_more_study/itertools/combination.md)
 
-# Python Algorithm
-* [버블 정렬, 카운팅 정렬](./python_algorithm_class/01.md)
-* [배열, 비트, 이진검색, 순차 검색](./python_algorithm_class/02.md)
-* [아스키코드, 문자열, 브루트포스, KMP 알고리즘, 보이어-무어 알고리즘](./python_algorithm_class/03.md)
-* [스택, 재귀, memoization, DP, DFS, BFS](./python_algorithm_class/04.md)
+## JAVA
+
+## SQL
+* [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
+* [SQL 기초](./SQL_basic/SQL_2.md)
+* [관계형 데이터베이스와 조인](./SQL_basic/SQL_3.md)
+* [집계 함수와 그룹화](./SQL_basic/SQL_4.md)
+* [데이터 수정과 삭제](./SQL_basic/SQL_5.md)
+* [인덱스의 성능 최적화](./SQL_basic/SQL_6.md)
+
+## Web
+* [Web - HTML, CSS](./Web/01_web_html_css.md)
+* [Web - CSS Layout](./Web/02_web_css_layout.md)
+* [Web - bootstrap](./Web/03_web_bootstrap.md)
+* [Web - bootstrap grid system](./Web/04_web_bootstrap_grid_system.md)
+
+## Django
+* [01. design pattern](./Django/01_design_pattern.md)
+* [02. template & urls](./Django/02_template&urls.md)
+* [03. model](./Django/03_model.md)
+* [04. ORM](./Django/04_ORM.md)
+* [05. Form](./Django/05_Form.md)
+* [06. static](./Django/06_static.md)
+* [07. Authentication System 1](./Django/07_Authentications_system.md)
+* [08. Authentication System 2](./Django/08_Authentications_system_2.md)
 
 
-# Python Algorithm (theme, more details)
+# 문제 풀이
+## Python Algorithm (more details)
 01. [array](./python_algorithm_details/01_array.md)
 02. [list](./python_algorithm_details/02_list.md)
 03. [stack](./python_algorithm_details/03_stack.md)
@@ -61,26 +85,7 @@
 27. [KMP](./python_algorithm_details/27_KMP.md)
 28. [Trie](./python_algorithm_details/28_Trie.md)
 
-
-# Python more study
-* itertool
-    * [permutation](./python_more_study/itertools/permutation.md)
-    * [combination](./python_more_study/itertools/combination.md)
-
-
-# JAVA - 공부하기
-
-
-# SQL - 공부하기
-* [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
-* [SQL 기초](./SQL_basic/SQL_2.md)
-* [관계형 데이터베이스와 조인](./SQL_basic/SQL_3.md)
-* [집계 함수와 그룹화](./SQL_basic/SQL_4.md)
-* [데이터 수정과 삭제](./SQL_basic/SQL_5.md)
-* [인덱스의 성능 최적화](./SQL_basic/SQL_6.md)
-
-
-# SQL - programmers 문제 풀이
+## SQL
 * SQL 고득점 Kit (programmers)
     * [SELECT](./SQL_programmers/01_select)
     * [SUM, MAX, MIN](./SQL_programmers/02_sum_max_min)
@@ -89,8 +94,7 @@
     * [JOIN](./SQL_programmers/05_join)
     * [String, Date](./SQL_programmers/06_string_date)
 
-
-# 백준 알고리즘 문제 풀이 - python
+## 백준 알고리즘 문제 풀이 - python
 * [Stack, Queue, Deque](./baekjoon/stack_queue_deque)
 * [BFS, DFS](./baekjoon/DFS_BFS)
 * [Recursion](./baekjoon/recursion)
@@ -117,20 +121,3 @@
 * [Implementation - 구현](./baekjoon/implementation)
     * [별찍기](./baekjoon/implementation/star)
 * [unorganized things](./baekjoon/my_study)
-
-
-# Web
-* [Web - HTML, CSS](./Web/01_web_html_css.md)
-* [Web - CSS Layout](./Web/02_web_css_layout.md)
-* [Web - bootstrap](./Web/03_web_bootstrap.md)
-* [Web - bootstrap grid system](./Web/04_web_bootstrap_grid_system.md)
-
-
-# Django
-* [design pattern](./Django/01_design_pattern.md)
-* [template & urls](./Django/02_template&urls.md)
-* [model](./Django/03_model.md)
-* [ORM](./Django/04_ORM.md)
-* [Form](./Django/05_Form.md)
-* [static](./Django/06_static.md)
-* [Authentication System](./Django/07_Authentications_system.md)
