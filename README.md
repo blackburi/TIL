@@ -3,7 +3,7 @@
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
 # Study
-## CS - 공부하기
+## CS
 * [개발상식](./CS/01_programming.md)
 * [네트워크](./CS/02_network.md)
 * [운영체제](./CS/03_operation_system.md)
