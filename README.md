@@ -13,14 +13,14 @@
 * [면접 질문 도전](./CS/07_question_of_interview.md)
 
 ## Python
-* [1-1](./python_class/1-1.md)
-* [1-2](./python_class/1-2.md)
-* [1-3](./python_class/1-3.md)
-* [1-4](./python_class/1-4.md)
-* [2-1](./python_class/2-1.md)
-* [2-2](./python_class/2-2.md)
-* [2-3](./python_class/2-3.md)
-* [2-4](./python_class/2-4.md)
+* [1-1](./python/1-1.md)
+* [1-2](./python/1-2.md)
+* [1-3](./python/1-3.md)
+* [1-4](./python/1-4.md)
+* [2-1](./python/2-1.md)
+* [2-2](./python/2-2.md)
+* [2-3](./python/2-3.md)
+* [2-4](./python/2-4.md)
 
 ## Python more study
 * itertool
@@ -121,3 +121,5 @@
 * [Implementation - 구현](./baekjoon/implementation)
     * [별찍기](./baekjoon/implementation/star)
 * [unorganized things](./baekjoon/my_study)
+
+## SWEA(SoftWare Expert Academy)
