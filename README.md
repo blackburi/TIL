@@ -122,4 +122,8 @@
     * [별찍기](./baekjoon/implementation/star)
 * [unorganized things](./baekjoon/my_study)
 
-## SWEA(SoftWare Expert Academy)
+## SWEA
+* SoftWare Expert Academy : 삼성
+
+## Softeer
+* 현대자동차그룹 SW인재확보플랫폼
