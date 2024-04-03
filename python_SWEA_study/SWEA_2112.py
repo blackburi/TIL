@@ -62,5 +62,9 @@ for tc in range(1, T+1) :
     else : # check(mat) is False
         for goal in range(1, d+1) :
             dfs(0, 0, goal)
+            # d의 최댓값이 13 -> injection을 작은 수부터 확인
+            # 통과된다면 바로 stop
+            if ans < 14 :
+                break
     
     print(f'#{tc} {ans}')
