@@ -20,4 +20,5 @@ for i in range(n) :
         if dp[j] < dp[i] + work[i][1] :
             dp[j] = dp[i] + work[i][1]
 
-print(max(dp))
+# print(max(dp))
+print(dp[-1])
