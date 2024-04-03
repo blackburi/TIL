@@ -26,7 +26,18 @@ def find(box, total) :
         return
 
     # 벌꿀 통을 선정
+    for i in range(n) :
+        for j in range(n-m+1) :
+            if True in visited[i][j:j+m] :
+                continue
 
+            two = []
+            for k in range(m) :
+                visited[i][j+k] = True
+                two.append(mat[i][j+k])
+            find(box+1, total+comb(two))
+            for k in range(m) :
+                visited[i][j+m] = False
 
 
 T = int(input())
@@ -38,5 +49,5 @@ for tc in range(1, T+1) :
 
     # 최대 이익
     ans = 0
-
-https://tarra.tistory.com/entry/SW-Expert-Academy-2115-%EB%B2%8C%EA%BF%80%EC%B1%84%EC%B7%A8
+    find(0, 0)
+    print(f'#{tc} {ans}')
