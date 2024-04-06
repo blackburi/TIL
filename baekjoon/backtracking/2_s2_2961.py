@@ -6,27 +6,22 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-lst = []
-for _ in range(n) :
-    lst.append((int, input().rstrip().split()))
+lst = [tuple(map(int, input().rstrip().split())) for _ in range(n)]
 
 ans = float('inf')
 
 def dfs(x, s, b) :
     global ans
 
-    if x == n :
+    if x !=0 and s != 1 and b != 0 :
         ans = min(ans, abs(s-b))
+
+    if x == n :
         return
 
-    ans = min(ans, abs(s-b))
+    dfs(x+1, s*lst[x][0], b+lst[x][1])
+    dfs(x+1, s, b)
 
-    for i in range(x, n) :
-        s *= lst[i][0]
-        b += lst[i][1]
-        dfs(i+1, s, b)
-        s //= lst[i][0]
-        b -= lst[i][1]
+dfs(0, 1, 0)
 
-for i in range(n) :
-    dfs(i, lst[i][0], lst[i][1])
+print(ans)
