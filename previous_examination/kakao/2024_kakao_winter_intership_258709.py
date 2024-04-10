@@ -16,7 +16,9 @@ def solution(dices):
         B_index_combi = [i for i in range(L) if i not in A_index_combi]
     
         A, B = [], []
-        # itertools product함수 : 
+        # itertools product함수
+        # product(lst1, lst2) -> 원소 한개씩을 뽑아와 tuple로 만들어줌
+        # product(range(n), repeat=length) -> range(n)을 length만큼 반복하여 tuple로 만들어 반환
         for order_product in product(range(6), repeat=L//2):
             A.append(sum(dices[i][j] for i, j in zip(A_index_combi, order_product)))
             B.append(sum(dices[i][j] for i, j in zip(B_index_combi, order_product)))
