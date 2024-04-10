@@ -29,8 +29,6 @@ def solution(dices):
 
     return [x+1 for x in dic[max_key]]
 
-
-
 #################
 # 시간 초과 풀이 #
 #################
