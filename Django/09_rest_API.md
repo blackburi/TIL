@@ -192,7 +192,7 @@
             ![django_rest_api_postman](../image/django_rest_api_postman.png)
     * Postman
         * API를 구축하고 사용하기 위한 플랫폼
-        * API를 빠르게 만들 수 있느 ㄴ여러 도구 및 기능을 제공
+        * API를 빠르게 만들 수 있는 여러 도구 및 기능을 제공
     * Postman 화면 구성
 
         ![django_rest_api_postman_element](../image/django_rest_api_postman_element.png)
@@ -231,6 +231,7 @@
         ![django_rest_api_articlelistserializser](../image/django_rest_api_articlelistserializser.png)
 
     * url 및 view 함수 작성
+        * QuerySet으로 들어온다면 반드시 `many=True`를 넣어주어야 한다.
 
         ![django_rest_api_url_view](../image/django_rest_api_url_view.png)
 
