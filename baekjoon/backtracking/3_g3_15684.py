@@ -1,76 +1,70 @@
 # 사다리 조작
 
 
-def check(lst) :
-    flag = 0
-    stack = deque([])
-    lst = deque(lst)
+# i번째가 i번째에 도착하는지 확인하는 함수
+def check() :
+    for i in range(n) :
+        start = i
+        for j in range(h) :
+            if sadari[j][start] == 'R' :
+                start += 1
+            elif sadari[j][start] == 'L' :
+                start -= 1
+        if start != i :
+            return False
+    return True
 
-    while lst :
-        k = lst.popleft()
-        if k == 'N' :
-            continue
+"""
+x값만 넣고 y값을 넣지 않는 이유
+-> 위에서 아래로 내려가면서 탐색
+-> 위로 다시 올라가서 탐색할 필요 없음
+-> 이전에 탐색완료
+y값의 경우에는 정렬이 불가능
+"""
 
-        if stack == deque([]) :
-            stack.append(k)
-        else : # stack != []
-            if stack[-1] == k :
-                stack.pop()
-            else : # stack[-1] != k
-                flag = 1
-                break
-    if flag == 1 or stack :
-        return False
-    else :
-        return True
+def make(cnt, x) :
+    global ans
 
-
-# 살펴볼 세로선, 설치한 다리의 개수
-def dfs(col, tmp) :
-    global cnt
-
-    if tmp > 3 :
+    # 이전 나온 ans보다 크거나 같으면 stop
+    if cnt >= ans :
         return
 
-    if col == n-1 :
-        if check(mat[col]) :
-            cnt = min(cnt, tmp)
+    if check() :
+        ans = min(ans, cnt)
         return
-    
-    if check(mat[col]) :
-        dfs(col+1, tmp)
-    
-    for i in range(h) :
-        if mat[col][i] == 'N' and mat[col+1][i] == 'N' :
-            mat[col][i], mat[col+1][i] = 'R', 'L'
-            if check(mat[col]) :
-                dfs(col+1, tmp+1)
-            mat[col][i], mat[col+1][i] = 'N', 'N'
 
+    # 사다리 설치는 최대 3개까지 되기 때문에
+    if cnt == 4 :
+        return
 
-# 각 세로선에서 연결된 다리를 보았을때
-# N을 제외했을때 LRRL처럼 대칭 구조여야 한다.
+    # 가로줄 선택
+    for i in range(x, h) :
+        # 설치할 사다리 위치(세로선 1개 -> 자동적으로 2개 선택됨)
+        for j in range(n-1) :
+            if sadari[i][j] == 'N' and sadari[i][j+1] == 'N' :
+                sadari[i][j] = 'R'
+                sadari[i][j+1] = 'L'
+                make(cnt+1, i)
+                sadari[i][j] = 'N'
+                sadari[i][j+1] = 'N'
+
 
 import sys
 input = sys.stdin.readline
-from collections import deque
 
-# 세로, 가로선의 개수, 가로
+# 세로선, 가로선, 세로선마다 가로선을 놓을 수 있는 위치의 개수
 n, m, h = map(int, input().split())
 
-# 각 세로선에 대해 왼쪽(N), 오른쪽(R), 연결되지 않음(N)을 표시
-mat = [['N']*h for _ in range(n)]
-
+sadari = [['N']*n for _ in range(h)]
+# 사다리의 위치
 for _ in range(m) :
     a, b = map(int, input().split())
-    mat[b-1][a-1] == 'L'
-    mat[b][a-1] == 'R'
+    sadari[a-1][b-1] = 'R'
+    sadari[a-1][b] = 'L'
 
-cnt = float('inf')
-
-dfs(0, 0)
-
-if cnt > 3 :
-    print(-1)
-else :
-    print(cnt)
+# 필요한 사다리의 개수
+ans = float('inf')
+make(0, 0)
+if ans > 3 :
+    ans = -1
+print(ans)
