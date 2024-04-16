@@ -6,10 +6,7 @@ def check() :
     for i in range(n) :
         start = i
         for j in range(h) :
-            if sadari[j][start] == 'R' :
-                start += 1
-            elif sadari[j][start] == 'L' :
-                start -= 1
+            start += sadari[j][start]
         if start != i :
             return False
     return True
@@ -33,20 +30,16 @@ def make(cnt, x) :
         ans = min(ans, cnt)
         return
 
-    # 사다리 설치는 최대 3개까지 되기 때문에
-    if cnt == 4 :
-        return
-
     # 가로줄 선택
     for i in range(x, h) :
         # 설치할 사다리 위치(세로선 1개 -> 자동적으로 2개 선택됨)
         for j in range(n-1) :
-            if sadari[i][j] == 'N' and sadari[i][j+1] == 'N' :
-                sadari[i][j] = 'R'
-                sadari[i][j+1] = 'L'
+            if sadari[i][j] == 0 and sadari[i][j+1] == 0 :
+                sadari[i][j] = 1
+                sadari[i][j+1] = -1
                 make(cnt+1, i)
-                sadari[i][j] = 'N'
-                sadari[i][j+1] = 'N'
+                sadari[i][j] = 0
+                sadari[i][j+1] = 0
 
 
 import sys
@@ -55,15 +48,15 @@ input = sys.stdin.readline
 # 세로선, 가로선, 세로선마다 가로선을 놓을 수 있는 위치의 개수
 n, m, h = map(int, input().split())
 
-sadari = [['N']*n for _ in range(h)]
+sadari = [[0]*n for _ in range(h)]
 # 사다리의 위치
 for _ in range(m) :
     a, b = map(int, input().split())
-    sadari[a-1][b-1] = 'R'
-    sadari[a-1][b] = 'L'
+    sadari[a-1][b-1] = 1
+    sadari[a-1][b] = -1
 
 # 필요한 사다리의 개수
-ans = float('inf')
+ans = 4
 make(0, 0)
 if ans > 3 :
     ans = -1
