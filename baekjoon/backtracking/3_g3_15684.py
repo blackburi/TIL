@@ -18,7 +18,7 @@ x값만 넣고 y값을 넣지 않는 이유
 y값의 경우에는 정렬이 불가능
 """
 
-def make(cnt, x) :
+def make(cnt, x, y) :
     global ans
 
     # 이전 나온 ans보다 크거나 같으면 stop
@@ -31,12 +31,18 @@ def make(cnt, x) :
 
     # 가로줄 선택
     for i in range(x, h) :
+        # 행이 변경되기 전에는 지금 탐색중인 열부터 탐색
+        if i == x :
+            k = y
+        # 행이 변경된 경우 처음 열부터 탐색
+        else :
+            k = 0
         # 설치할 사다리 위치(세로선 1개 -> 자동적으로 2개 선택됨)
-        for j in range(n-1) :
+        for j in range(k, n-1) :
             if sadari[i][j] == 0 and sadari[i][j+1] == 0 :
                 sadari[i][j] = 1
                 sadari[i][j+1] = -1
-                make(cnt+1, i)
+                make(cnt+1, i, k+2)
                 sadari[i][j] = 0
                 sadari[i][j+1] = 0
 
@@ -56,7 +62,7 @@ for _ in range(m) :
 
 # 필요한 사다리의 개수
 ans = 4
-make(0, 0)
+make(0, 0, 0)
 if ans > 3 :
     ans = -1
 print(ans)
