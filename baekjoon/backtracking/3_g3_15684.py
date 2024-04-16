@@ -1,9 +1,8 @@
 # 사다리 조작
 
-
 # i번째가 i번째에 도착하는지 확인하는 함수
 def check() :
-    for i in range(n) :
+    for i in range(n-1) :
         start = i
         for j in range(h) :
             start += sadari[j][start]
