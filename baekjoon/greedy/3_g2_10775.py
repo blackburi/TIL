@@ -30,3 +30,5 @@ for _ in range(p) :
         break
 
 print(len(maxplane))
+
+# 시간 초과 // 60분
