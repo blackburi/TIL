@@ -31,6 +31,7 @@
 
 ## JS
 * [DOM](./JS/01_DOM.md)
+* [Basic Syntax](./JS/02_Basic_Syntax.md)
 
 ## SQL
 * [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
