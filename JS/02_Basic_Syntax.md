@@ -328,11 +328,11 @@
     ```js
     // loops-and-iteration.html
 
-    const fruits = { a : 'apple', b : 'banana'}
+    const object = { a : 'apple', b : 'banana'}
 
     for (const property in object) {
         console.log(property) // a, b
-        console.log(objet[property]) // apple, banana
+        console.log(object[property]) // apple, banana
     }
     ```
 * `for of` : 반복 가능한 객체(배열, 문자열 등)에 대한 반복
