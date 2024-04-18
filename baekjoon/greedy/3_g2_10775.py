@@ -24,8 +24,8 @@ def find(plane) :
         return plane
     
     # 동일하지 않음 -> 차있음 -> 앞쪽에서 찾아야함
-    gate[plane] = find(gate[plane])
-    return gate[plane]
+    gates[plane] = find(gates[plane])
+    return gates[plane]
 
 for plane in planes :
     # gate가 가득차서 도킹이 불가능한 경우
