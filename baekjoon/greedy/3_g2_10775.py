@@ -26,19 +26,16 @@ for plane in planes :
         gates[plane] = gates[plane - 1]
 
 
+def find(plane) :
+    if plane == gates[plane] :
+        return
+    
+    find(plane-1)
 
 
-
-
-
-
-
-
-
-
-
-
-
+#######################################
+# python 내풀이 : 시간초과 / (60분 사용)#
+#######################################
 
 import sys
 input = sys.stdin.readline
@@ -62,6 +59,7 @@ for _ in range(p) :
         k -= 1
         if k == 0 :
             break
+
         if k not in maxplane :
             maxplane.add(k)
             break
@@ -70,5 +68,3 @@ for _ in range(p) :
         break
 
 print(len(maxplane))
-
-# 시간 초과 // 60분
