@@ -21,54 +21,19 @@ ans = 0
 def find(plane) :
     # gates의 값이 plane과 동일 -> 아직 비어있음
     if gates[plane] == plane :
-        
-    # i번 비행기가 들어올때 i번 게이트가 차있는 경우
-    else :
-        gates[plane] = gates[plane - 1]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import sys
-input = sys.stdin.readline
-
-# 게이트의 수
-g = int(input())
-gate = [0]*g
-# 비행기의 수
-p = int(input())
-
-# 도킹할 수 있는 비행기를 넣는 곳
-maxplane = set()
-
-for _ in range(p) :
-    k = int(input())
-    if k not in maxplane :
-        maxplane.add(k)
-        continue
-    # k in maxplane
-    while k > 0 :
-        k -= 1
-        if k == 0 :
-            break
-
-        if k not in maxplane :
-            maxplane.add(k)
-            break
+        return plane
     
-    if k == 0 :
-        break
+    # 동일하지 않음 -> 차있음 -> 앞쪽에서 찾아야함
+    gates[plane] = find(gates[plane])
+    return gates[plane]
 
-print(len(maxplane))
+for plane in planes :
+    # gate가 가득차서 도킹이 불가능한 경우
+    if find(plane) == 0 :
+        break
+            
+    # gate가 남아서 도킹이 가능한 경우
+    gates[find(plane)] = gates[find(plane)-1]
+    ans += 1
+
+print(ans)
