@@ -6,21 +6,24 @@
 def dfs(height, leng, cut, x, y) :
     global length, k
 
+    length = max(length, leng)
+
     for i in range(4) :
         mx = x + dx[i]
         my = y + dy[i]
         if 0 <= mx < n and 0 <= my < n and (visited[mx][my] is False) :
-            visited[my][my] = True
             if height > mat[mx][my] :
+                visited[mx][my] = True
                 dfs(mat[mx][my], leng+1, cut, mx, my)
+                visited[mx][my] = False
 
-            if cut == 0 and k >= mat[mx][my] - height :
-                for j in range(1, k+1) :
+            if cut == 0 and mat[mx][my] >= height and k > mat[mx][my] - height :
+                for j in range(mat[mx][my]-height+1, k+1) :
+                    visited[mx][my] = True
                     dfs(mat[mx][my]-j, leng+1, cut+1, mx, my)
                     visited[mx][my] = False
-
-
-
+    return
+    
 
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
@@ -49,3 +52,9 @@ for tc in range(1, T+1) :
 
     visited = [[False]*n for _ in range(n)]
 
+    for (x, y) in start :
+        visited[x][y] = True
+        dfs(mat[x][y], 1, 0, x, y)
+        visited[x][y] = False
+
+    print(f'#{tc} {length}')
