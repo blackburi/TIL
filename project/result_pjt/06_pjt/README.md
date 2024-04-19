@@ -142,7 +142,7 @@ class Comment(models.Model):
 
 * 결과 : 
 
-![게시글 상세 페이지](4readme/detail.PNG)
+![게시글 상세 페이지](./4readme/detail.PNG)
 
 <br>
 
@@ -188,7 +188,7 @@ class Comment(models.Model):
 
 * 결과 : 
 
-![유저 프로필 페이지](4readme/profile.PNG)
+![유저 프로필 페이지](./4readme/profile.PNG)
   
 ```python
 # accounts/views.py
