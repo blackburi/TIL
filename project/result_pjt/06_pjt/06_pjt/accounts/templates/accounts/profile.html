@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div>
+  <div class="justify-content-between">
+    <div class="d-flex justify-content-between">
+      <h1>{{ person.username }}님의 프로필 페이지</h1>
+      <p>팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+        {% if request.username == person.username %}
+        {% else %}
+          {% if request.person in person.followers.all %}
+            <form action="{% url "accounts:follow" person.pk %}" method="POST">
+              {% csrf_token %}
+              <input type="submit" value='unfollow'>
+            </form>
+          {% else %}
+            <form action="{% url "accounts:follow" person.pk %}" method="POST">
+              {% csrf_token %}
+              <input type="submit" value='follow'>
+            </form>
+          {% endif %}
+        {% endif %}
+      </p>
+    </div>
+    <br>
+    <p>회원 번호 : {{ person.pk }}</p>
+    <p>유저 이름 : {{ person.username }}</p>
+    <p>가입 날짜 : {{ person.date_joined }}</p>
+    <hr>
+    <h3>유저가 쓴 글</h3>
+    <div>
+      {% for board in boards %}
+        <p>글 번호 : {{ board.pk }}</p>
+        <p>글제목 : <a href="{% url "boards:detail" board.pk %}">{{ board.title }}</a></p>
+      {% endfor %}
+    </div>
+    <hr>
+    <h3>유저가 좋아요를 누른 글</h3>
+    <div>
+      {% for like in likes %}
+        <p>글제목 : <a href="{% url "boards:detail" like.pk %}">{{ like.title }}</a></p>
+      {% endfor %}
+    </div>
+    <hr>
+    <h3>유저가 쓴 댓글</h3>
+    <div>
+      {% for comment in comments %}
+        <p>게시글 제목 : <a href="{% url "boards:detail" comment.board.pk %}">{{ comment.board.title }}</a></p>
+        <p>댓글 내용 : {{ comment.content }}</p>
+      {% endfor %}
+    </div>
+    <hr>
+    <h3>팔로워</h3>
+    <div>
+      {% for follower in followers %}
+        <p>{{ follower.username }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock content %}
