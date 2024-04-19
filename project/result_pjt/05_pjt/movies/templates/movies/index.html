@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<br>
+<h1>INDEX PAGE</h1>
+<hr>
+<div class="container text-left">
+  <div class="row ">
+  {% for movie in movies %}
+    <div class="col-6 my-1">
+      <div class="card">
+        <div class="card-header">
+          <p>제 목 : {{ movie.title }}</p>
+        </div>
+        <div class="card-body">
+          <p>내 용 : {{ movie.content }}</p>
+          <hr>
+          {% if movie.image %}
+            <img src="{{ movie.image.url }}" alt="movieimage">
+          {% else %}
+            <p>준비된 이미지가 없습니다.</p>
+          {% endif %}
+          <hr>
+          {% if request.user.is_authenticated %}
+            <a href="{% url "movies:detail" movie.pk %}" class="btn btn-primary">상세 정보</a>
+            <hr>
+            <div class='d-flex w-100 justify-content-between align-items-center'>
+              {{ movie.like_users.all|length }}
+              <form action="{% url "movies:likes_movie" movie.pk %}" method="POST">
+                {% csrf_token %}
+                {% if request.user in movie.like_users.all %}
+                  <input type="submit" value="❤">
+                {% else %}
+                  <input type="submit" value="🤍">
+                {% endif %}
+              </form>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

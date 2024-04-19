@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <br>
+  <h1>영화 정보</h1>
+  <hr>
+  <p>영화 제목 : {{ movie.title }}</p>
+  <hr>
+  {% if movie.image %}
+    <img src="{{ movie.image.url }}" alt="movie image">
+  {% else %}
+    준비된 이미지가 없습니다. 빠른 시일 내에 준비하겠습니다.
+  {% endif %}
+  <hr>
+  <p> 내용 : {{ movie.content }}</p>
+  <hr>
+  {% if request.user == movie.user %}
+    <a href="{% url "movies:update" movie.pk %}" method="POST">
+      <input type="submit" value="수정">
+    </a>
+    <a href="{% url "movies:delete" movie.pk %}" method="POST">
+      <input type="submit" value="삭제">
+    </a>
+  {% endif %}
+  <hr>
+  <h2>댓글 목록</h2>
+  <br>
+  {% if comments %}
+    <ul>
+      {% for comment in comments %}
+        <li>{{ comment.content }}</li>
+        {% if request.user == comment.user %}
+          {{ comment.like_users.all|length }}
+          <form action="{% url "movies:delete_comment" movie.pk comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="삭제">
+          </form>
+        {% else %}
+          <div class='d-flex w-10'>
+            {{ comment.like_users.all|length }}
+            <form action="{% url "movies:likes_comment" movie.pk comment.pk %}" method="POST">
+              {% csrf_token %}
+              {% if request.user in comment.like_users.all %}
+                <input type="submit" value="❤">
+              {% else %}
+                <input type="submit" value="🤍">
+              {% endif %}
+            </form>
+          </div>
+        {% endif %}
+        <br>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <li>작성된 댓글이 없습니다.</li>
+  {% endif %}
+  <hr>
+  {% if request.user.is_authenticated %}
+    {% if request.user == movie.user %}
+    {% else %}
+      <form action="{% url "movies:create_comment" movie.pk %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="댓글 작성">
+      </form>
+    {% endif %}
+  {% endif %}
+  <br>
+  <br>
+{% endblock content %}
