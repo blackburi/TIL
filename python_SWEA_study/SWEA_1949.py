@@ -1,5 +1,5 @@
 # 등산로 조정
-from pprint import pprint
+
 
 # 현재 높이, 현재 등산로의 길이, 공사 횟수(max = 1)
 # 현재 위치 x, y
@@ -22,13 +22,12 @@ def dfs(height, leng, cut, x, y) :
                 visited[mx][my] = True
                 dfs(mat[mx][my], leng+1, cut, mx, my)
                 visited[mx][my] = False
+            
             # 다음 이동이 현재보다 높이가 같거나 높은 경우
-            else :
-                if cut == 0 and mat[mx][my]-k < height :
-                    visited[mx][my] = True
-                    dfs(height-1, leng+1, cut+1, mx, my)
-                    visited[mx][my] = False
-    return
+            if height <= mat[mx][my] and cut == 0 and mat[mx][my]-k < height :
+                visited[mx][my] = True
+                dfs(height-1, leng+1, cut+1, mx, my)
+                visited[mx][my] = False
 
 
 T = int(input())
