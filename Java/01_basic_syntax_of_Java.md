@@ -20,6 +20,16 @@
 
         ![Java_01_JVM](../image/Java/Java_01_JVM.png)
 
+* main method
+    * 실행 명령인 java를 실행 시 가장 먼저 호출 되는 부분
+    * 만약, Application에서 `main()` 메서드가 없다면 절대로 실행 될 수 없음
+    * Application의 시작 -> 특정 클래스의 `main()` 실행
+    * 형태 (고정된 형태)
+
+        ```java
+        public static void main(String [ ] args) { }
+        ```
+
 
 ## 변수와 자료형
 
