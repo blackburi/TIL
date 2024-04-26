@@ -2,7 +2,9 @@
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
+
 # Study
+
 ## CS
 * [개발상식](./CS/01_programming.md)
 * [네트워크](./CS/02_network.md)
@@ -22,16 +24,7 @@
 * [2-3](./python/2-3.md)
 * [2-4](./python/2-4.md)
 
-## Python more study
-* itertool
-    * [permutation](./python_more_study/itertools/permutation.md)
-    * [combination](./python_more_study/itertools/combination.md)
-
 ## JAVA
-
-## JS
-* [DOM](./JS/01_DOM.md)
-* [Basic Syntax](./JS/02_Basic_Syntax.md)
 
 ## SQL
 * [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
@@ -40,6 +33,11 @@
 * [집계 함수와 그룹화](./SQL_basic/SQL_4.md)
 * [데이터 수정과 삭제](./SQL_basic/SQL_5.md)
 * [인덱스의 성능 최적화](./SQL_basic/SQL_6.md)
+
+## Python more study
+* itertool
+    * [permutation](./python_more_study/itertools/permutation.md)
+    * [combination](./python_more_study/itertools/combination.md)
 
 ## Web
 * [Web - HTML, CSS](./Web/01_web_html_css.md)
@@ -57,8 +55,17 @@
 * [07. Authentication System 1](./Django/07_Authentications_system.md)
 * [08. Authentication System 2](./Django/08_Authentications_system_2.md)
 
+## JavaScript
+* [DOM](./JS/01_DOM.md)
+* [Basic Syntax](./JS/02_Basic_Syntax.md)
+* [Reference Type](./JS/03_Reference_Type.md)
+* [Controlling event](./JS/04_Controlling_event.md)
+* [Asynchronous JavaScript](./JS/05_Asynchronous_JavaScript.md)
+* [Ajax with Django](./JS/06_Ajax_with_Django.md)
+
 
 # 문제 풀이
+
 ## Python Algorithm (more details)
 01. [array](./python_algorithm_details/01_array.md)
 02. [list](./python_algorithm_details/02_list.md)
