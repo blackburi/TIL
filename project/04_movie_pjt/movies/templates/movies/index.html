@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<br>
+<h1>INDEX PAGE</h1>
+<hr>
+<ul>
+  {% for movie in movies %}
+    <li>
+      <p>제 목 : {{ movie.title }}</p>
+      {% if movie.image %}
+        <img src="{{ movie.image.url }}" alt="movieimage">
+      {% endif %}
+      <p>내 용 : {{ movie.content }}</p>
+      {% if request.user.is_authenticated %}
+        <form action="{% url "movies:detail" movie.pk %}">
+          {% csrf_token %}
+          <input type="submit" value="상세 정보">
+        </form>
+      {% endif %}
+      <hr>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
