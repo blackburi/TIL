@@ -141,3 +141,8 @@
 
 ## Softeer
 * 현대자동차그룹 SW인재확보플랫폼
+
+## 2024 kakao winter intership
+* [산 모양 타일링](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258705.py)
+* [n+1 카드게임](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258707.py)
+* [주사위 고르기](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258709.py)
