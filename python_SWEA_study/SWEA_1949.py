@@ -1,5 +1,5 @@
 # 등산로 조정
-from pprint import pprint
+
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
 
