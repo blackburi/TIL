@@ -263,7 +263,7 @@ const returnObject2 = () => ({ key: 'value' })
         console.log(user) // {'key with space': true, address: 'korea', greeting: f}
         ```
 * `in`연산자
-    * 속성이 객체에 존재하는지 여불르 확인
+    * 속성이 객체에 존재하는지 여부를 확인
         ```js
         const user = {
             name : 'Alice',
@@ -314,7 +314,7 @@ const returnObject2 = () => ({ key: 'value' })
 
     console.log(person.greeting()) // Hello my name is Alice
     ```
-* JavaScript에서 this는 함수를 **"호출하는 방법"**에 따라 가리키는 대상이 다름
+* JavaScript에서 this는 함수를 **호출하는 방법**에 따라 가리키는 대상이 다름
 
 |호출 방법|대상|
 |:---:|:---:|
@@ -374,7 +374,7 @@ const returnObject2 = () => ({ key: 'value' })
 * JavaScript 'this' 정리
     * JavaScript의 함수는 호출될 때 this를 암묵적으로 전달 받음
     * JavaScript에서 this는 함수가 "호출되는 방식"에 따라 결정되는 현재 객체를 나타냄
-    * python의 self와 Java의 this가 선언 시 이미 값이 정해지는 것에 비해 JavaScript의 this는 **함수가 호ㅜㄹ되기 전까지 값이 할당되지 않고 호출 시에 결정**됨 (동적 할당)
+    * python의 self와 Java의 this가 선언 시 이미 값이 정해지는 것에 비해 JavaScript의 this는 **함수가 호출되기 전까지 값이 할당되지 않고 호출 시에 결정**됨 (동적 할당)
     * this가 미리 정해지지 않고 호출 방식에 의해 결정되는 것은
         * 장점 : 함수(메서드)를 하나만 만들어 여러 객체에서 재사용할 수 있다는것
         * 단점 : 이런 유연함이 실수로 이어질 수 있다는 것
@@ -563,6 +563,7 @@ const returnObject2 = () => ({ key: 'value' })
     console.log(typeof objToJson) // string
     ```
     ```js
+    // JSON -> Object
     const JsonToObj = JSON.parse(objToJson)
     console.log(JsonToObj) // {coffee: 'Americano', iceCream: 'Cookie and cream'}
     console.log(typeof JsonToObj) // object
@@ -778,7 +779,7 @@ const returnObject2 = () => ({ key: 'value' })
         for (const person of persons) {
             result1.push(person.name)
         }
-        console.log(result1) // ['Alice1, 'Bella']
+        console.log(result1) // ['Alice, 'Bella']
 
         // map()
         const result2 = persons.map(function (person) {
