@@ -2,7 +2,7 @@
 
 ## Template Syntax
 * Template Syntax
-    * DOM을 기본 구성 요소 인스턴스의 데이터에 **선언적으로 바인딩(Vue Instance와 DOM을 연결)**할 수 있는 HTML 기반 **템플릿 구문(확장된 문법 제공)**을 사용
+    * DOM을 기본 구성 요소 인스턴스의 데이터에 <a>선언적으로 바인딩(Vue Instance와 DOM을 연결)</a>할 수 있는 HTML 기반 <a>템플릿 구문(확장된 문법 제공)</a>을 사용
 * Template Syntax 종류
     1. Text Interpolation
         ```js
