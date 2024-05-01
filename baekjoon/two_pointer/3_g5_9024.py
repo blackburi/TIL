@@ -12,37 +12,33 @@ for _ in range(t) :
     # 두 수의 합
     m = 200000000
 
+    # 정답(출력값)
     ans = 0
 
-    for i in range(n) :
-        # number[i]와 더하는 수를 찾아야 함 -> i+1부터 시작
-        start = i+1
-        end = n-1
+    start = 0
+    end = n-1
 
-        if m == k :
-            if numbers[i] <= k//2 and ((k-numbers[i]) in numbers) :
+    while start < end :
+        hap = numbers[start] + numbers[end]
+
+        # 차이가 더 작다면
+        if m > abs(k-hap) :
+            m = abs(k-hap)
+            ans = 0
+
+        # 합이 k보다 작음 -> 합을 k에 맞출수 있는지 start += 1을 통해 hap을 크게 만든다.
+        if hap < k :
+            if abs(k-hap) == m :
                 ans += 1
-
-        if numbers[i] > m//2 :
-            break
-
-        while start <= end :
-            mid = (start+end)//2
-            # 모든 경우 check -> start가 아닌 i를 넣어줘야 한다.
-            hap = numbers[i] + numbers[mid]
-
-
-            if abs(k-hap) < m :
-                ans = 1
-                m = abs(k-hap)
-            elif abs(k-hap) == m :
+            start += 1
+        # 합이 k보다 큼 -> 합을 k에 맞출수 있는지 end -= 1을 통해 hap을 작게 만든다.
+        elif hap > k :
+            if abs(k-hap) == m :
                 ans += 1
-
-            if hap > k :
-                end = mid - 1
-            elif hap < k :
-                start = mid + 1
-            else : # hap == k
-                break
+            end -= 1
+        # 동일하다면 ans+1 동시에 start값을 1개 올려 다시 세어준다.
+        else : # hap == k
+            ans += 1
+            start += 1
 
     print(ans)
