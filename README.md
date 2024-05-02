@@ -65,6 +65,8 @@
 
 ## Vue
 * [Introduction of Vue](./Vue/01_Introduction_of_Vue.md)
+* [Basic Syntax 1](./Vue/02_Basic_Syntax_1.md)
+* [Basic Syntax 2](./Vue/02_Basic_Syntax_2.md)
 
 
 # 문제 풀이
