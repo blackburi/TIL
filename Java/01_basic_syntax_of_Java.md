@@ -173,20 +173,20 @@
     int a = 10;
     int b = 6;
 
-    System.out.println(a + b);
-    System.out.println(a - b);
-    System.out.println(a * b);
-    System.out.println(a / b);
-    System.out.println(a % b);
+    System.out.println(a + b); // 16
+    System.out.println(a - b); // 4
+    System.out.println(a * b); // 60
+    System.out.println(a / b); // 1
+    System.out.println(a % b); // 4
 
-    System.out.println(double(a) / b);
-    System.out.println(a / double(b));
-    System.out.println(double(a / b));
+    System.out.println(double(a) / b); // 1.666666666666667
+    System.out.println(a / double(b)); // 1.666666666666667
+    System.out.println(double(a / b)); // 1.0
 
     double c = 2.3;
 
-    System.out.println(a / c);
-    System.out.println(a / (int) c);
+    System.out.println(a / c); // 4.347826086956522
+    System.out.println(a / (int) c); // 5
     ```
 
 ## 제어문(조건문 & 반복문)
