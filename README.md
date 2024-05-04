@@ -25,6 +25,8 @@
 * [2-4](./python/2-4.md)
 
 ## JAVA
+* [Basic Syntax of Java](./Java/01_basic_syntax_of_Java.md)
+* [Array](./Java/02_Array.md)
 
 ## SQL
 * [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
