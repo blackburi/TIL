@@ -21,10 +21,13 @@ for i in range(n) :
             houses.append((i, j))
 
 # 방문 처리 / index=0 최종 도착지(진우집)
-visited = [False] * (len(houses))
+visited = {}
+for i in range(len(houses)) :
+    visited[i] = False
 
 # 진우가 먹는 우유의 최대 개수
 cnt = 0
+
 
 # 현재 위치, 먹은 우유의 개수, 남은 체력
 def dfs(x, y, milk, stamina) :
