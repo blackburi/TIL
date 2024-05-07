@@ -200,7 +200,7 @@
 * 이벤트 인자 전달 활용
     * ParentChild에서 이벤트를 발신하여 Parent로 추가 인자 전달하기
 
-        ![vue_05_event_argument_application](../image/Vue/05/vue_05_event_argument.png)
+        ![vue_05_event_argument_application](../image/Vue/05/vue_05_event_argument_application.png)
 
     * ParentChild에서 발신한 이벤트를 Parent에서 수신
 
