@@ -219,14 +219,14 @@
 
     * 부모 컴포넌트에서 수신시(->Kebab_case)
 
-        ![vue_05_event_detail_kebab_case](image.png)
+        ![vue_05_event_detail_kebab_case](../image/Vue/05/vue_05_event_detail_kebab_case.png)
 
 
 ### emit 이벤트 활용
 * 최하단 컴포넌트 ParentGrandChld에서 Parent 컴포넌트의 name 변수 변경 요청
     * ParentGrandChild에서 이름 변경을 요청하는 이벤트 발신
 
-        ![vue_05_practice_emit_1](image.png)
+        ![vue_05_practice_emit_1](../image/Vue/05/vue_05_practice_emit_1.png)
 
         ![vue_05_practice_emit_graph_1](../image/Vue/05/vue_05_practice_emit_graph_1.png)
 
