@@ -1,9 +1,5 @@
 # 표현 가능한 이진트리
 
-import sys
-input = sys.stdin.readline
-
-
 # 이진수, 왼, 오
 def check(b, left, right) :
     # 리프 노드까지 도달 -> 포화 이진트리로 표현 가능
