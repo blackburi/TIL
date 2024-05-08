@@ -150,3 +150,5 @@
 * [산 모양 타일링](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258705.py)
 * [n+1 카드게임](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258707.py)
 * [주사위 고르기](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258709.py)
+* [표현 가능한 이진트리](./python_programmers/previous_examination/kakao/2023_kakao_blind_recruitment_150367.py)
+* [표 병합](./python_programmers/previous_examination/kakao/2023_kakao_blind_recruitment_150366.py)
