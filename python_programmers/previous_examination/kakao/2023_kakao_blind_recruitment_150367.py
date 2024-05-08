@@ -1,5 +1,8 @@
 # 표현 가능한 이진트리
 
+import sys
+input = sys.stdin.readline
+
 
 # 이진수, 왼, 오
 def check(b, left, right) :
