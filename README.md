@@ -156,3 +156,19 @@
 * [주사위 고르기](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258709.py)
 * [표현 가능한 이진트리](./python_programmers/previous_examination/kakao/2023_kakao_blind_recruitment_150367.py)
 * [표 병합](./python_programmers/previous_examination/kakao/2023_kakao_blind_recruitment_150366.py)
+
+
+# Project
+
+## Project
+
+## practice before project
+* [python을 활용한 API 데이터 수집 - movie part](./Project/practice/01_pjt/)
+* [python과 pandas를 사용한 데이터 처리 - bank part](./Project/practice/02_pjt/)
+* [반응형 웹 페이지 구현](./Project/practice/03_pjt/)
+* [인증 페이지 구현](./Project/practice/04_pjt/)
+* [DB를 활용한 웹 페이지 구현](./Project/practice/05_pjt/)
+* [관계형 DB 설계 - 회원제 커뮤니티 게시판 구현](./Project/practice/06_pjt/)
+* [DB 설계를 활용한 REST API 설계 - 금융 상품 데이터를 활용한 REST API Server 구축](./Project/practice/07_pjt/)
+* [Axios 비동기 통신을 이용한 웹사이트 구현 - 알고리즘 구현 및 성능 측정](./Project/practice/03_pjt/)
+* [Vue를 활용한 SPA 구성](./Project/practice/08_pjt/)
