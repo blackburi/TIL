@@ -28,7 +28,7 @@
     * 클라이언트에서 화면을 렌더링 하는 방식
     * 동작 과정
 
-        ![vue_01_CSR](../image/vue_01_CSR.png)
+        ![vue_01_CSR](../image/vue/01/vue_01_CSR.png)
 
         1. 브라우저는 서버로부터 최소한의 HTML 페이지와 해당 페이지에 필요한 JavaScript 응답 받음
         2. 그런 다음 클라이언트 측에서 JavaScript를 사용하여 DOM을 업데이트 하고 페이지를 렌더링
@@ -77,9 +77,9 @@
         * [공식 문서](https://gitstar-ranking.com/)
 * Vue 예시
 
-    ![vue_01_example](../image/vue_01_example.png)
+    ![vue_01_example](../image/vue/01/vue_01_example.png)
 
-    ![vue_01_example_result](../image/vue_01_example_result.png)
+    ![vue_01_example_result](../image/vue/01/vue_01_example_result.png)
 
 * Vue의 2가지 핵심 기능
     1. 선언적 렌더링(Declarative Rendering)
@@ -95,23 +95,23 @@
 * Vue 작성하는 방법
     * CDN 작성
 
-        ![vue_01_write_CDN](../image/vue_01_write_CDN.png)
+        ![vue_01_write_CDN](../image/vue/01/vue_01_write_CDN.png)
 
     * 전역 Vue 객체
         * CDN에서 Vue를 사용하는 경우 전역 Vue 객체를 불러오게 됨
 
-        ![vue_01_write_global_vue](../image/vue_01_write_global_vue.png)
+        ![vue_01_write_global_vue](../image/vue/01/vue_01_write_global_vue.png)
 
     * Application instance
         * 모든 Vue 어플리케이션은 createApp 함수로 새 Application instance를 생성하는 것으로 시작
 
-        ![vue_01_write_application_instance](../image/vue_01_write_application_instance.png)
+        ![vue_01_write_application_instance](../image/vue/01/vue_01_write_application_instance.png)
 
     * `app.mount()`
         * HTML 요소에 Vue 어플리케이션 인스턴스를 탑재(연결)
         * 각 앱 인스턴스에 대해 `mount()`는 한 번만 호출할 수 있음
 
-        ![vue_01_write_mount](../image/vue_01_write_mount.png)
+        ![vue_01_write_mount](../image/vue/01/vue_01_write_mount.png)
 
 * `ref()`
     * 반응형 상태(데이터)를 선언하는 함수 (Declaring Reactive State)
@@ -122,34 +122,34 @@
     * ref로 선언된 변수의 값이 변경되면, 해당 값을 사용하는 템플릿에서 자동으로 업데이트
     * 인자는 어떠한 타입도 가능
 
-        ![vue_01_ref_function](../image/vue_01_ref_function.png)
+        ![vue_01_ref_function](../image/vue/01/vue_01_ref_function.png)
 
     * 템플릿의 참조에 접근하려면 setup 함수에서 선언 및 반환 필요
     * 편의상 템플릿에서 ref를 사용할 때는 `.value`를 작성할 필요 없음 (automatically unwrapped)
 
-        ![vue_01_ref_function_2](../image/vue_01_ref_function_2.png)
+        ![vue_01_ref_function_2](../image/vue/01/vue_01_ref_function_2.png)
 
 * Vue 기본 구조
     * `createApp()`에 전달되는 객체는 Vue 컴포넌트(Component)
     * 컴포넌트의 상태는 `setup()` 함수 내에서 선언되어야 하며 **객체를 반환해야 함**
 
-        ![vue_01_structure_of_vue](../image/vue_01_structure_of_vue.png)
+        ![vue_01_structure_of_vue](../image/vue/01/vue_01_structure_of_vue.png)
 
 * 템플릿 렌더링
     * 반환된 객체의 속성은 템플릿에서 사용할 수 있음
     * Mustache syntax(콧수염 구문)를 사용하여 메세지 값을 기반으로 동적 텍스트를 렌더링
 
-        ![vue_01_template_rendering_mustache_syntax](../image/vue_01_template_rendering_mustache_syntax.png)
+        ![vue_01_template_rendering_mustache_syntax](../image/vue/01/vue_01_template_rendering_mustache_syntax.png)
 
     * 콘텐츠는 식별자나 경로에만 국한되지 않으며 유효한 JavaScript 표현식을 사용할 수 있음
 
-        ![vue_01_template_rendering_javascript](../image/vue_01_template_rendering_javascript.png)
+        ![vue_01_template_rendering_javascript](../image/vue/01/vue_01_template_rendering_javascript.png)
 
 * Event Linteners in Vue
     * `v-on` directive를 사용하여 DOM 이벤트를 수신할 수 있음
     * 함수 내에서 반응형 변수를 변경하여 구성 요소 상태를 업데이트
 
-        ![vue_01_event_listener_in_vue](../image/vue_01_event_listener_in_vue.png)
+        ![vue_01_event_listener_in_vue](../image/vue/01/vue_01_event_listener_in_vue.png)
 
 
 ## 참고
@@ -157,17 +157,17 @@
     * 템플릿에서의 unwrap은 ref가 최상위 속성인 경우에만 적용 가능
     * 다음 표현식은 어떻게 출력될까?
 
-        ![vue_01_unwrap_1](../image/vue_01_unwrap_1.png)
+        ![vue_01_unwrap_1](../image/vue/01/vue_01_unwrap_1.png)
 
     * object는 최상위 속성이지만 `object.id`는 그렇지 않음
     * 표현식을 평가할 때 `object.id`가 unwrap 되지 않고 ref 객체로 남아 있기 때문
     * 이 문제를 해결하기 위해서는 "id를 최상위 속성으로 분해"해야 함
 
-        ![vue_01_unwrap_2](../image/vue_01_unwrap_2.png)
+        ![vue_01_unwrap_2](../image/vue/01/vue_01_unwrap_2.png)
 
     * 단, ref가 `{{}}`의 최종평가 값인 경우는 unwrap 가능
 
-        ![vue_01_unwrap_3](../image/vue_01_unwrap_3.png)
+        ![vue_01_unwrap_3](../image/vue/01/vue_01_unwrap_3.png)
 
 * ref 객체가 필요한 이유
     * 일반적인 변수가 아닌 객체 데이터 타입으로 사용하는 이유는?
@@ -178,7 +178,7 @@
         * [공식 문서](https://vuejs.org/guide/essentials/reactivity-fundamentals.html#why-refs)
 * 반응형 변수 vs 일반 변수
 
-    ![vue_01_variable](../image/vue_01_variable.png)
+    ![vue_01_variable](../image/vue/01/vue_01_variable.png)
 
 * SEO = Search Engine Optimization
     * google, bing과 같은 검색 엔진 등에 내 서비스나 제품 등이 효율적으로 검색 엔진에 노출되도록 개선하는 과정을 일컫는 작업
