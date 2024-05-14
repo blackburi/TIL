@@ -349,6 +349,61 @@
 ### 인증 여부 확인
 * 사용자의 인증(로그인) 여부에 따른 추가 기능 구현
     1. 인증 되지 않은 사용자 -> 메인 페이지 접근 제한
+        * 전역 네비게이션 가드 `beforeEach`를 활용해 다른 주소에서 메인 페이지로 이동 시 인증 되지 않은 사용자라면 로그인 페이지로 이동시키기
+
+            ![vue_09_beforeEach](../image/Vue/09/vue_09_beforeEach.png)
+
+        * 브라우저 local storage에서 token을 삭제 후 메인 페이지 접속 시도
+
+            ![vue_09_delete_token](../image/Vue/09/vue_09_delete_token.png)
+
     2. 인증 된 사용자 -> 회원가입 및 로그인 페이지에 접근 제한
+        * 다른 주소에서 회원강비 또는 로그인 페이지로 이동 시 이미 인증 된 사용자라면 메인 페이지로 이동시키기
+
+            ![vue_09_if_isauthenticated](../image/Vue/09/vue_09_if_isauthenticated.png)
+
+        * 로그인 후 회원가입, 로그인 페이지 접속 시도
+
+            ![vue_09_login_after_login](../image/Vue/09/vue_09_login_after_login.png)
+
+* 인증 상태 여부를 나타낼 속성 값 지정
+    * token 소유 여부에 따라 로그인 상태를 나타낼 `isLogin` 변수 작성, 그리고 computed를 활용해 token 값이 변할 때만 상태를 계산하도록 함
+
+        ![vue_09_islogin](../image/Vue/09/vue_09_islogin.png)
 
 ### 기타 기능 구현
+* 자연스러운 어플리케이션을 위한 기타 기능 구현
+    1. 로그인 성공 후 자동으로 메인 페이지로 이동하기
+
+        ![vue_09_mainpage_after_login](../image/Vue/09/vue_09_mainpage_after_login.png)
+
+    2. 회원가입 성공 후 자동으로 로그인까지 진행하기
+
+        ![vue_09_login_after_signup](../image/Vue/09/vue_09_login_after_signup.png)
+
+
+
+## 참고
+* Django Signals
+    * "이벤트 알림 시스템"
+    * 어플리케이션 내에서 특정 이벤트가 발생할 때, 다른 부분에게 신호를 보내어 이벤트가 발생했음을 알릴 수 있음
+    * 주로 모델의 데이터 변경 또는 저장, 삭제와 같은 작업에 반응하여 추가적인 로직을 실행하고자 할 때 사용
+        - 예를 들어, 사용자가 새로운 게시글을 작성할 때마다 특정 작업(예 : 이메일 알림 보내기)을 수행하려는 경우
+* 환경 변수 (environment variable)
+    * 어플리케이션의 설정이나 동작을 제어하기 위해 사용되는 변수
+* 환경 변수의 목적
+    * 개발, 텍스트 및 프로덕션 환경에서 다르게 설정되어야 하는 설정 값이나 민감한 정보(ex. API key)를 포함
+    * 환경 변수를 사용하여 어플리케이션의 설정을 관리하면, 다양한 환경에서 일관된 동작을 유지하면서 필요에 따라 변수를 쉽게 변경할 수 있음
+    * 보안적인 이슈를 피하고, 어플리케이션을 다양한 환경에 대응하기 쉽게 만들어 줌
+* Vite에서 환경 변수를 사용하는 법
+
+    ![vue_09_environment_variable_vite](../image/Vue/09/vue_09_environment_variable_vite.png)
+
+* Vue 프로젝트 진행 시 유용한 자료
+    * Awesome Vue.js
+        - Vue와 관련하여 선별된 유용한 자료를 아카이빙 및 관리하는 프로젝트
+        - [자료1](https://github.com/vuejs/awesome-vue)
+        - [자료2](https://awesome-vue.js.org/)
+    * Vuetify
+        - Vue를 위한 UI 라이브러리 (like 'Bootstrap')
+        - [자료](https://vuetifyjs.com/en/)
