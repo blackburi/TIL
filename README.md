@@ -175,3 +175,4 @@
 * [DB 설계를 활용한 REST API 설계 - 금융 상품 데이터를 활용한 REST API Server 구축](./Project/practice/07_pjt/)
 * [Axios 비동기 통신을 이용한 웹사이트 구현 - 알고리즘 구현 및 성능 측정](./Project/practice/08_pjt/)
 * [Vue를 활용한 SPA 구성 - Vue를 활용한 동영상 검색 관리 서비스 구현](./Project/practice/09_pjt/)
+* [연습용 최종 프로젝트](./Project/practice/10_pjt_final/)
