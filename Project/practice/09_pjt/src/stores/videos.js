@@ -1,9 +1,8 @@
 import { computed, ref } from 'vue'
 import { defineStore } from "pinia"
 import axios, { all } from 'axios'
+import API_KEY from '@/stores/.env'
 
-// const API_KEY = 'AIzaSyC31xwCxkurrC1VbdCYM9IU71Xv51LR4u0'
-const API_KEY = 'AIzaSyD4CRDN86DBeLUKLUv06bACLVtmXVJ-VCQ'
 const API_URL = 'https://www.googleapis.com/youtube/v3/search'
 
 export const useVideosStore = defineStore('videos', () => {
