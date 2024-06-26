@@ -37,11 +37,14 @@ def watch(mat, mm, x, y):
         while True:
             mx += dx[i]
             my += dy[i]
+            # 범위를 벗어나는 경우
             if mx < 0 or my < 0 or mx >= n or my >= m:
                 break
 
+            # 벽에 도달하는 경우
             if mat[mx][my] == 6:
                 break
+            # 감시가 가능한 경우
             elif mat[mx][my] == 0:
                 mat[mx][my] = 7
 
