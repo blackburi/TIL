@@ -48,3 +48,5 @@ for i in range(k, n+k-1) :
         answer = max(answer, cnt)
 
 print(answer)
+
+### 쿠폰과 관련된 코드를 최적화할 필요가 있음

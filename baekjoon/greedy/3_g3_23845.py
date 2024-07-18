@@ -12,7 +12,7 @@ lst = list(map(int, input().rstrip().split()))
 lst.sort(reverse=True)
 
 # 우선순위 큐(dict로 구현)
-pq = {i : [] for i in range(1, 100001)}
+pq = {i : [] for i in range(1, 100002)}
 
 for x in lst :
     # x+1 크기의 인형이 없으면 x 크기 인형으로 새로운 마트료시카 시작
@@ -27,7 +27,7 @@ for x in lst :
 ans = 0
 
 # 각 크기별로 구성된 마트료시카의 수익 계산
-for i in range(1, 100001) :
+for i in range(1, 100002) :
     while pq[i] :
         node = -heapq.heappop(pq[i])
         ans += node * (node - i + 1)
