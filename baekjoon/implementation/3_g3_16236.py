@@ -61,13 +61,17 @@ while True :
 
     # 먹을 물고기를 뽑는다.
     tmp, xx, yy = candidate.popleft()
+    # 거리(시간)을 더해준다.
     cnt += tmp
+    # 아기상어가 먹은 물고기의 수 + 1
     size[1] += 1
 
+    # 크기가 k인 아기상어는 k마리 물고기를 먹어야 사이즈가 1 증가한다.
     if size[0] == size[1] :
         size[0] += 1
         size[1] = 0
 
+    # 위치 갱신
     mat[fx][fy] = 0
     fx, fy = xx, yy
 
