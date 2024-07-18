@@ -14,8 +14,12 @@ for i in range(n) :
             fy = j
     mat.append(sub)
 
-dx = (1, -1, 0, 0)
-dy = (0, 0, 1, -1)
+# 같은 거리라면 위-> 왼쪽 물고기를 먹어야 하기 때문에
+dx = (-1, 0, 0, 1)
+dy = (0, -1, 1, 0)
 
 cnt = 0
 
+# BFS로 먹을수 있는 가장 가까운 위치를 찾는다.
+def bfs(x, y) :
+    q = deque()
