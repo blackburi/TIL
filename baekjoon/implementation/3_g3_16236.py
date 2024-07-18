@@ -22,4 +22,53 @@ cnt = 0
 
 # BFS로 먹을수 있는 가장 가까운 위치를 찾는다.
 def bfs(x, y) :
-    q = deque()
+    visited = [[0]*n for _ in range(n)]
+    q = deque([(x, y)])
+    visited[x][y] = 1
+
+    # 가까운 거리 순서, x, y
+    candidate = []
+
+    while q :
+        a, b = q.popleft()
+        for dir in range(4) :
+            ma = a + dx[dir]
+            mb = b + dy[dir]
+
+            if 0 <= ma < n and 0 <= mb < n and visited[ma][mb] == 0 :
+                if mat[x][y] > mat[ma][mb] and mat[ma][mb] != 0 :
+                    visited[ma][mb] = visited[a][b] + 1
+                    candidate.append((visited[ma][mb]-1, ma, mb))
+                elif mat[x][y] == mat[ma][mb] :
+                    visited[ma][mb] = visited[a][b] + 1
+                    q.append((ma, mb))
+                elif mat[ma][mb] == 0 :
+                    visited[ma][mb] = visited[a][b] + 1
+                    q.append((ma, mb))
+
+    # 거리, 위쪽, 왼쪽 순서대로 중요도  -> 정렬
+    return sorted(candidate, key = lambda x : (x[0], x[1], x[2]))
+
+# 물고기 사이즈
+size = [2, 0]
+
+while True :
+    mat[fx][fy] = size[0]
+    candidate = deque(bfs(fx, fy))
+
+    if not candidate :
+        break
+
+    # 먹을 물고기를 뽑는다.
+    tmp, xx, yy = candidate.popleft()
+    cnt += tmp
+    size[1] += 1
+
+    if size[0] == size[1] :
+        size[0] += 1
+        size[1] = 0
+
+    mat[fx][fy] = 0
+    fx, fy = xx, yy
+
+print(cnt)
