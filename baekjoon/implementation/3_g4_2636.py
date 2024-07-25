@@ -22,9 +22,6 @@ for _ in range(n) :
 dx = (0, 0, -1, 1)
 dy = (1, -1, 0, 0)
 
-# 시행할때마다 남은 치즈수를 저장할 변수
-cheese = []
-
 # 시간
 t = 0
 
@@ -49,7 +46,6 @@ def melt() :
                     mat[nx][ny] = 0
                     visited[nx][ny] = 1
                     cnt += 1
-    cheese.append(cnt)
     return cnt
 
 while True :
@@ -58,6 +54,8 @@ while True :
     cnt = melt()
     if cnt == 0 :
         break
+    else :
+        memory = cnt
 
 print(t-1)
-print(cheese[-2])
+print(memory)
