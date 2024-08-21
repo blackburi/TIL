@@ -14,7 +14,6 @@
 * [면접 질문 도전](./CS/07_question_of_interview.md)
 
 
-
 # 기술 stack
 
 ## Python
@@ -88,6 +87,40 @@
     * [IS NULL](./SQL_programmers/04_is_null)
     * [JOIN](./SQL_programmers/05_join)
     * [String, Date](./SQL_programmers/06_string_date)
+
+
+
+# Algorithm
+
+## Python Algorithm (more details)
+01. [array](./python_algorithm_details/01_array.md)
+02. [list](./python_algorithm_details/02_list.md)
+03. [stack](./python_algorithm_details/03_stack.md)
+04. [queue](./python_algorithm_details/04_queue.md)
+05. [deque](./python_algorithm_details/05_deque.md)
+06. [BFS](./python_algorithm_details/06_BFS.md)
+07. [DFS](./python_algorithm_details/07_DFS.md)
+08. [recursion](./python_algorithm_details/08_recursion.md)
+09. [backtracking](./python_algorithm_details/09_backtracking.md)
+10. [simulation](./python_algorithm_details/10_simulation.md)
+11. [sort1](./python_algorithm_details/11_sort1.md)
+12. [sort2](./python_algorithm_details/12_sort2.md)
+13. [DP](./python_algorithm_details/13_DP.md)
+14. [greedy](./python_algorithm_details/14_greedy.md)
+15. [math](./python_algorithm_details/15_math.md)
+16. [binary search](./python_algorithm_details/16_binary_search.md)
+17. [two pointer](./python_algorithm_details/17_two_pointer.md)
+18. [hash](./python_algorithm_details/18_hash.md)
+19. [binary search tree](./python_algorithm_details/19_binary_search_tree.md)
+20. [priority queue](./python_algorithm_details/20_priority_queue.md)
+21. [graph](./python_algorithm_details/21_graph.md)
+22. [tree](./python_algorithm_details/22_tree.md)
+23. [topological sorting](./python_algorithm_details/23_topological_sorting.md)
+24. [MST](./python_algorithm_details/24_MST.md)
+25. [Floyd Warshall](./python_algorithm_details/25_Floyd-Warshall.md)
+26. [Dijkstra](./python_algorithm_details/26_Dijkstra.md)
+27. [KMP](./python_algorithm_details/27_KMP.md)
+28. [Trie](./python_algorithm_details/28_Trie.md)
 
 
 
