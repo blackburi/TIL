@@ -2,9 +2,6 @@
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
-
-# Study
-
 ## CS
 * [개발상식](./CS/01_programming.md)
 * [네트워크](./CS/02_network.md)
@@ -36,16 +33,13 @@
 * [데이터 수정과 삭제](./SQL_basic/SQL_5.md)
 * [인덱스의 성능 최적화](./SQL_basic/SQL_6.md)
 
-## Python more study
-* itertool
-    * [permutation](./python_more_study/itertools/permutation.md)
-    * [combination](./python_more_study/itertools/combination.md)
 
 ## Web
 * [Web - HTML, CSS](./Web/01_web_html_css.md)
 * [Web - CSS Layout](./Web/02_web_css_layout.md)
 * [Web - bootstrap](./Web/03_web_bootstrap.md)
 * [Web - bootstrap grid system](./Web/04_web_bootstrap_grid_system.md)
+
 
 ## Django
 * [01. design pattern](./Django/01_design_pattern.md)
@@ -56,6 +50,7 @@
 * [06. static](./Django/06_static.md)
 * [07. Authentication System 1](./Django/07_Authentications_system.md)
 * [08. Authentication System 2](./Django/08_Authentications_system_2.md)
+
 
 ## JavaScript
 * [DOM](./JS/01_DOM.md)
@@ -78,38 +73,6 @@
 * [Vue & Django project](./Vue/vue_django_pjt/)
 
 
-# 문제 풀이
-
-## Python Algorithm (more details)
-01. [array](./python_algorithm_details/01_array.md)
-02. [list](./python_algorithm_details/02_list.md)
-03. [stack](./python_algorithm_details/03_stack.md)
-04. [queue](./python_algorithm_details/04_queue.md)
-05. [deque](./python_algorithm_details/05_deque.md)
-06. [BFS](./python_algorithm_details/06_BFS.md)
-07. [DFS](./python_algorithm_details/07_DFS.md)
-08. [recursion](./python_algorithm_details/08_recursion.md)
-09. [backtracking](./python_algorithm_details/09_backtracking.md)
-10. [simulation](./python_algorithm_details/10_simulation.md)
-11. [sort1](./python_algorithm_details/11_sort1.md)
-12. [sort2](./python_algorithm_details/12_sort2.md)
-13. [DP](./python_algorithm_details/13_DP.md)
-14. [greedy](./python_algorithm_details/14_greedy.md)
-15. [math](./python_algorithm_details/15_math.md)
-16. [binary search](./python_algorithm_details/16_binary_search.md)
-17. [two pointer](./python_algorithm_details/17_two_pointer.md)
-18. [hash](./python_algorithm_details/18_hash.md)
-19. [binary search tree](./python_algorithm_details/19_binary_search_tree.md)
-20. [priority queue](./python_algorithm_details/20_priority_queue.md)
-21. [graph](./python_algorithm_details/21_graph.md)
-22. [tree](./python_algorithm_details/22_tree.md)
-23. [topological sorting](./python_algorithm_details/23_topological_sorting.md)
-24. [MST](./python_algorithm_details/24_MST.md)
-25. [Floyd Warshall](./python_algorithm_details/25_Floyd-Warshall.md)
-26. [Dijkstra](./python_algorithm_details/26_Dijkstra.md)
-27. [KMP](./python_algorithm_details/27_KMP.md)
-28. [Trie](./python_algorithm_details/28_Trie.md)
-
 ## SQL
 * SQL 고득점 Kit (programmers)
     * [SELECT](./SQL_programmers/01_select)
@@ -119,52 +82,8 @@
     * [JOIN](./SQL_programmers/05_join)
     * [String, Date](./SQL_programmers/06_string_date)
 
-## 백준 알고리즘 문제 풀이 - python
-* [Stack, Queue, Deque](./baekjoon/stack_queue_deque)
-* [BFS, DFS](./baekjoon/DFS_BFS)
-* [Recursion](./baekjoon/recursion)
-* [Backtracking - 백트래킹](./baekjoon/backtracking)
-    * [N & M](./baekjoon/backtracking/N&M)
-* [Simulation](./baekjoon/simulation)
-* [Sort](./baekjoon/sort)
-* [DP - 다이나믹 프로그래밍](./baekjoon/dp)
-* [Greedy - 그리디](./baekjoon/greedy)
-* [Math](./baekjoon/math)
-* [Binary Search](./baekjoon/binary_search)
-* [Two pointer](./baekjoon/two_pointer)
-* [Hash](./baekjoon/hash)
-* [Binary Search Tree](./baekjoon/binary_search_tree)
-* [Priority queue](./baekjoon/priority_queue)
-* [Graph](./baekjoon/graph)
-* [Tree](./baekjoon/tree)
-* [Topological Sorting](./baekjoon/topological_sorting)
-* [MST - Minimum Spanning Tree](./baekjoon/MST)
-* [Floyd Warshall](./baekjoon/floyd_warshall)
-* [Dijkstra](./baekjoon/dijkstra)
-* [KMP](./baekjoon/KMP)
-* [Trie](./baekjoon/trie)
-* [Implementation - 구현](./baekjoon/implementation)
-    * [별찍기](./baekjoon/implementation/star)
-* [unorganized things](./baekjoon/my_study)
-
-## SWEA
-* SoftWare Expert Academy : 삼성
-
-## Softeer
-* 현대자동차그룹 SW인재확보플랫폼
-
-## 2024 kakao winter intership
-* [산 모양 타일링](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258705.py)
-* [n+1 카드게임](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258707.py)
-* [주사위 고르기](./python_programmers/previous_examination/kakao/2024_kakao_winter_intership_258709.py)
-* [표현 가능한 이진트리](./python_programmers/previous_examination/kakao/2023_kakao_blind_recruitment_150367.py)
-* [표 병합](./python_programmers/previous_examination/kakao/2023_kakao_blind_recruitment_150366.py)
-
 
 # Project
-
-## Project
-
 ## practice before project
 * [python을 활용한 API 데이터 수집 - movie part](./Project/practice/01_pjt/)
 * [python과 pandas를 사용한 데이터 처리 - bank part](./Project/practice/02_pjt/)
