@@ -1,4 +1,6 @@
-# system
+# Basic
+
+## system
 * [Markdown & CLI & Git](./basic_coding/basic_coding_1.md)
 * [Local & Remote Repository](./basic_coding/basic_coding_2.md)
 
@@ -10,6 +12,10 @@
 * [자료구조](./CS/05_data_structure.md)
 * [알고리즘](./CS/06_algorithm.md)
 * [면접 질문 도전](./CS/07_question_of_interview.md)
+
+
+
+# 기술 stack
 
 ## Python
 * [1-1](./python/1-1.md)
@@ -24,6 +30,15 @@
 ## JAVA
 * [Basic Syntax of Java](./Java/01_basic_syntax_of_Java.md)
 * [Array](./Java/02_Array.md)
+
+## JavaScript
+* [DOM](./JS/01_DOM.md)
+* [Basic Syntax](./JS/02_Basic_Syntax.md)
+* [Reference Type](./JS/03_Reference_Type.md)
+* [Controlling event](./JS/04_Controlling_event.md)
+* [Asynchronous JavaScript](./JS/05_Asynchronous_JavaScript.md)
+* [Ajax with Django](./JS/06_Ajax_with_Django.md)
+
 
 ## SQL
 * [SQL과 데이터베이스의 기본 개념](./SQL_basic/SQL_1.md)
@@ -52,14 +67,6 @@
 * [08. Authentication System 2](./Django/08_Authentications_system_2.md)
 
 
-## JavaScript
-* [DOM](./JS/01_DOM.md)
-* [Basic Syntax](./JS/02_Basic_Syntax.md)
-* [Reference Type](./JS/03_Reference_Type.md)
-* [Controlling event](./JS/04_Controlling_event.md)
-* [Asynchronous JavaScript](./JS/05_Asynchronous_JavaScript.md)
-* [Ajax with Django](./JS/06_Ajax_with_Django.md)
-
 ## Vue
 * [Introduction of Vue](./Vue/01_Introduction_of_Vue.md)
 * [Basic Syntax 1](./Vue/02_Basic_Syntax_1.md)
@@ -73,7 +80,7 @@
 * [Vue & Django project](./Vue/vue_django_pjt/)
 
 
-## SQL
+## SQL - 문제 풀이
 * SQL 고득점 Kit (programmers)
     * [SELECT](./SQL_programmers/01_select)
     * [SUM, MAX, MIN](./SQL_programmers/02_sum_max_min)
@@ -83,7 +90,9 @@
     * [String, Date](./SQL_programmers/06_string_date)
 
 
+
 # Project
+
 ## practice before project
 * [python을 활용한 API 데이터 수집 - movie part](./Project/practice/01_pjt/)
 * [python과 pandas를 사용한 데이터 처리 - bank part](./Project/practice/02_pjt/)
